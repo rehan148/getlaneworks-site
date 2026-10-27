@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Laneworks reads freight quote requests, prices them from your own rate sheet and drafts the reply.">
+</head>
+<body>
+<title>Laneworks</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a quay-side manifest. Hero pairs the inbound email with the docket it becomes; below, a run of plain sections on a cool steel ground, one crane-yellow accent. */
+:root {
+  --bg: #f2f4f4;
+  --surface: #ffffff;
+  --ink: #12201f;
+  --muted: #566563;
+  --line: #d3dbda;
+  --teal: #1d6b66;
+  --crane: #d9970f;
+  --crane-soft: #fbf0d6;
+  --ok: #2c6e3f;
+  --ok-soft: #e1f0e4;
+  --warn: #9a3d12;
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1615; --surface: #162120; --ink: #e3ebe9; --muted: #98a7a4; --line: #2a3937;
+    --teal: #63b8b0; --crane: #f0b23a; --crane-soft: #3a2f14; --ok: #7fc795; --ok-soft: #1b3324; --warn: #f0a07a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1615; --surface: #162120; --ink: #e3ebe9; --muted: #98a7a4; --line: #2a3937;
+  --teal: #63b8b0; --crane: #f0b23a; --crane-soft: #3a2f14; --ok: #7fc795; --ok-soft: #1b3324; --warn: #f0a07a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+.band { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.inner { max-width: 1120px; margin: 0 auto; }
+a { color: var(--teal); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--crane); outline-offset: 2px; border-radius: 2px; }
+
+/* nav */
+nav.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+.wordmark { font-family: var(--display); font-weight: 700; font-size: 28px; letter-spacing: .02em; text-transform: uppercase; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.wordmark svg { flex: none; }
+.navlinks { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
+.navlinks a { color: var(--muted); text-decoration: none; }
+.navlinks a:hover { color: var(--ink); }
+@media (max-width: 640px) { .navlinks { display: none; } }
+@media (max-width: 520px) { .cell:nth-child(2) { border-right: 0; } .cell:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 48px; align-items: center; padding-block: 56px 64px; }
+@media (max-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 36px 44px; } }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 7vw, 76px); line-height: .92; margin: 12px 0 18px; text-transform: uppercase; letter-spacing: .005em; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--crane); }
+.lede { font-size: 18px; max-width: 46ch; margin: 0 0 24px; color: var(--ink); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { display: inline-block; font: 600 16px var(--body); padding: 12px 20px; border-radius: 4px; text-decoration: none; border: 0; cursor: pointer; }
+.btn.primary { background: var(--crane); color: #1b1404; }
+.btn.secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.fine { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+/* the transformation */
+.transform { display: grid; gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; min-width: 0; }
+.mail { padding: 14px 16px; font-family: var(--mono); font-size: 13px; line-height: 1.6; }
+.mail .hdr { color: var(--muted); border-bottom: 1px dashed var(--line); padding-bottom: 8px; margin-bottom: 8px; overflow-wrap: anywhere; }
+.mail p { margin: 0; overflow-wrap: anywhere; }
+.arrow { display: flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+.arrow::before, .arrow::after { content: ""; height: 1px; background: var(--line); flex: 1; }
+.docket-card { overflow: hidden; }
+.docket-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.lane { font-family: var(--display); font-weight: 600; font-size: 26px; text-transform: uppercase; letter-spacing: .02em; }
+.lane span { color: var(--crane); }
+.codes { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.cells { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+@media (max-width: 520px) { .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cell { padding: 8px 12px; border-right: 1px solid var(--line); min-width: 0; }
+.cell:last-child { border-right: 0; }
+.cell .k { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.cell .v { font-weight: 500; font-size: 14px; overflow-wrap: anywhere; }
+table.q { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+table.q td { padding: 6px 16px; border-bottom: 1px dashed var(--line); }
+table.q td:last-child { text-align: right; font-family: var(--mono); white-space: nowrap; }
+table.q tr.total td { border-bottom: 0; border-top: 2px solid var(--ink); font-weight: 600; padding-block: 10px; }
+.status-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; padding: 10px 16px; background: var(--ok-soft); color: var(--ok); font-size: 13px; font-weight: 500; }
+.status-row .mono { font-family: var(--mono); font-size: 12px; }
+
+/* sections */
+section.block { padding-block: 64px; border-top: 1px solid var(--line); }
+@media (max-width: 700px) { section.block { padding-block: 44px; } }
+h2 { font-family: var(--display); font-weight: 700; font-size: clamp(32px, 4.5vw, 46px); line-height: 1; text-transform: uppercase; margin: 8px 0 16px; text-wrap: balance; }
+.section-lede { max-width: 60ch; color: var(--muted); margin: 0 0 32px; font-size: 17px; }
+
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; counter-reset: step; }
+@media (max-width: 860px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+.step { padding: 20px 24px 22px 0; border-top: 3px solid var(--ink); margin-right: 24px; min-width: 0; }
+@media (max-width: 860px) { .step { margin-right: 0; padding-right: 0; } }
+.step .n { font-family: var(--mono); font-size: 13px; color: var(--crane); font-weight: 500; }
+.step h3 { font-family: var(--display); font-weight: 600; font-size: 24px; text-transform: uppercase; letter-spacing: .02em; margin: 6px 0 8px; }
+.step p { margin: 0; color: var(--muted); max-width: 40ch; }
+.step code { font-family: var(--mono); font-size: 13px; background: var(--crane-soft); color: var(--ink); padding: 1px 6px; border-radius: 3px; overflow-wrap: anywhere; }
+
+.handles { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.handle { background: var(--surface); padding: 16px 18px; min-width: 0; }
+.handle .tag { font-family: var(--mono); font-size: 12px; color: var(--teal); letter-spacing: .06em; }
+.handle h3 { margin: 4px 0 4px; font-size: 16px; font-weight: 600; }
+.handle p { margin: 0; color: var(--muted); font-size: 14px; }
+
+.trust { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 48px; }
+@media (max-width: 760px) { .trust { grid-template-columns: minmax(0, 1fr); } }
+.trust div { min-width: 0; }
+.trust h3 { font-size: 18px; margin: 0 0 6px; font-weight: 600; }
+.trust p { margin: 0; color: var(--muted); max-width: 52ch; }
+
+.pricing { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.pricing-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.pricing th, .pricing td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.pricing th { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.pricing tr:last-child td { border-bottom: 0; }
+.pricing td.price { font-family: var(--display); font-weight: 600; font-size: 24px; white-space: nowrap; }
+.pricing td.price small { font-family: var(--body); font-size: 13px; font-weight: 400; color: var(--muted); }
+.pricing tr.highlight td { background: var(--crane-soft); }
+.guarantee { margin-top: 18px; padding: 14px 18px; border-left: 3px solid var(--crane); background: var(--surface); max-width: 70ch; }
+
+.faq { display: grid; gap: 0; max-width: 820px; }
+.faq details { border-bottom: 1px solid var(--line); padding: 16px 0; }
+.faq summary { cursor: pointer; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--mono); color: var(--crane); }
+.faq details[open] summary::after { content: "–"; }
+.faq p { margin: 10px 0 0; color: var(--muted); max-width: 68ch; }
+
+.closing { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 40px; align-items: center; }
+@media (max-width: 820px) { .closing { grid-template-columns: minmax(0, 1fr); } }
+.contact-card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 10px; }
+.addr { font-family: var(--mono); font-size: 18px; overflow-wrap: anywhere; user-select: all; }
+.copy-status { font-size: 13px; color: var(--muted); min-height: 1.4em; }
+
+footer.foot { padding-block: 28px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .docket-card { animation: rise .6s ease-out .15s both; }
+  @keyframes rise { from { transform: translateY(8px); opacity: .4; } to { transform: none; opacity: 1; } }
+}
+</style>
+
+<div class="band">
+  <div class="inner">
+    <nav class="top" aria-label="Main">
+      <a class="wordmark" href="#top" aria-label="Laneworks home">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="7" width="24" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 7v12M11 7v12M16 7v12M21 7v12" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="3" width="10" height="2.4" fill="var(--crane)"/></svg>
+        Laneworks
+      </a>
+      <div class="navlinks">
+        <a href="#how">How the pilot works</a>
+        <a href="#trust">Security</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div>
+        <div class="eyebrow">AI back office for freight forwarders · Australia &amp; NZ</div>
+        <h1>Every quote request, <em>drafted</em> before your team opens it.</h1>
+        <p class="lede">Laneworks reads the quote requests your customers send, prices them from your own rate sheet and drafts the reply. Your team checks it and clicks send.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#start">Send us 10 quote emails</a>
+          <a class="btn secondary" href="https://claude.ai/artifact/SkEJoABY1DTuSiw43pvE8v" target="_blank" rel="noopener">Try the live demo</a>
+        </div>
+        <p class="fine">Free trial run on your own emails. No call, no integration, no mailbox access.</p>
+      </div>
+
+      <div class="transform" aria-label="Example: a quote request and the drafted quote">
+        <div class="card mail">
+          <div class="hdr">From: Daniel, Harbourline Homewares (example)<br>Subject: Quote request – 40HC Ningbo</div>
+          <p>Can you please quote 1 x 40HC FOB Ningbo to Melbourne, door delivery to Dandenong South 3175. Outdoor furniture, approx 9,800 kg / 62 cbm. Cargo ready 14 Nov. We'll need customs clearance too.</p>
+        </div>
+        <div class="arrow">read, priced, drafted</div>
+        <div class="card docket-card">
+          <div class="docket-top">
+            <div class="lane">Ningbo <span aria-hidden="true">→</span> Melbourne</div>
+            <div class="codes">CNNGB → AUMEL · FCL · FOB</div>
+          </div>
+          <div class="cells">
+            <div class="cell"><div class="k">Equipment</div><div class="v">1 × 40HC</div></div>
+            <div class="cell"><div class="k">Weight</div><div class="v">9,800 kg</div></div>
+            <div class="cell"><div class="k">Ready</div><div class="v">14 Nov</div></div>
+            <div class="cell"><div class="k">Deliver to</div><div class="v">Dandenong Sth 3175</div></div>
+          </div>
+          <table class="q">
+            <tbody>
+              <tr><td>Ocean freight 1 × 40HC</td><td>AUD 2,900.00</td></tr>
+              <tr><td>Destination terminal &amp; docs</td><td>AUD 780.00</td></tr>
+              <tr><td>Door delivery, Dandenong South</td><td>AUD 560.00</td></tr>
+              <tr><td>Customs clearance &amp; BICON lodgement</td><td>AUD 180.00</td></tr>
+              <tr class="total"><td>Total</td><td>AUD 4,420.00</td></tr>
+            </tbody>
+          </table>
+          <div class="status-row"><span>Reply drafted · ready to send</span><span class="mono">priced from your tariff</span></div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="band">
+  <div class="inner">
+    <section class="block" id="how" aria-labelledby="how-h">
+      <div class="eyebrow">How the pilot works</div>
+      <h2 id="how-h">Live in an afternoon. Nothing to install.</h2>
+      <p class="section-lede">The pilot runs alongside CargoWise or whatever you use today. Your team keeps working the way it does; the drafts just show up.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="n">Step 1</div>
+          <h3>Forward your quote requests</h3>
+          <p>Set one Outlook or Gmail rule that forwards quote requests to your own Laneworks address, like <code>quotes+yourco@getlaneworks.com</code>. We never need your mailbox password.</p>
+        </div>
+        <div class="step">
+          <div class="n">Step 2</div>
+          <h3>Load your rates</h3>
+          <p>Fill in our rate sheet template with your FCL, LCL, air, local charges and delivery zones. Every price comes from it, never from the AI.</p>
+        </div>
+        <div class="step">
+          <div class="n">Step 3</div>
+          <h3>Drafts land in your inbox</h3>
+          <p>Within minutes your ops team gets the extracted shipment, the priced quote and a reply ready to send. Anything missing comes back as questions to ask the customer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="handles-h">
+      <div class="eyebrow">What it handles</div>
+      <h2 id="handles-h">Built for how forwarders actually quote</h2>
+      <p class="section-lede">It reads requests the way your customers write them: half the details in the subject, cartons in centimetres, Incoterms forgotten.</p>
+      <div class="handles">
+        <div class="handle"><div class="tag">FCL</div><h3>20GP, 40GP, 40HC</h3><p>Per-container freight, terminal and docs, any quantity mix.</p></div>
+        <div class="handle"><div class="tag">LCL</div><h3>Priced by W/M</h3><p>The greater of cubic metres or tonnes, with your minimums, worked out from carton sizes.</p></div>
+        <div class="handle"><div class="tag">AIR</div><h3>Chargeable weight</h3><p>Actual versus volumetric at your factor, rounded the way your airline does.</p></div>
+        <div class="handle"><div class="tag">EXW · FOB · CIF · DAP</div><h3>Incoterm-aware</h3><p>Origin, freight and destination charges included or left out to match the terms.</p></div>
+        <div class="handle"><div class="tag">DOOR</div><h3>Delivery by postcode</h3><p>Your cartage zones applied from the delivery address.</p></div>
+        <div class="handle"><div class="tag">CUSTOMS</div><h3>Clearance and biosecurity</h3><p>Clearance and BICON lodgement added when the customer asks for it.</p></div>
+        <div class="handle"><div class="tag">VAGUE</div><h3>"Rate for a container?"</h3><p>Missing details come back as polite follow-up questions, not guesses.</p></div>
+        <div class="handle"><div class="tag">MULTI</div><h3>Several shipments, one email</h3><p>Each shipment gets its own docket and quote.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="trust" aria-labelledby="trust-h">
+      <div class="eyebrow">Security and control</div>
+      <h2 id="trust-h">Your rates. Your customers. Your send button.</h2>
+      <div class="trust">
+        <div><h3>No access to your mailbox</h3><p>You forward only the emails you choose. We never ask for passwords or connect to your email system.</p></div>
+        <div><h3>Prices only from your rate sheet</h3><p>The AI reads the email. The numbers come from your tariff, line by line, so every figure can be traced back to a rate you set.</p></div>
+        <div><h3>A person always sends</h3><p>Drafts go to your ops team, never to your customer. Nothing leaves your business without someone checking it.</p></div>
+        <div><h3>Data deleted after 30 days</h3><p>Forwarded emails are kept only as long as the pilot needs them, then deleted. Your rate sheet is never shared or used for anyone else.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="pricing" aria-labelledby="pricing-h">
+      <div class="eyebrow">Pricing</div>
+      <h2 id="pricing-h">Start free, then a 60-day pilot</h2>
+      <div class="pricing-wrap">
+        <table class="pricing">
+          <thead><tr><th>Stage</th><th>What you get</th><th>Price (AUD, ex GST)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Trial run</strong></td><td>We process 10 of your real quote emails and send back the drafted replies.</td><td class="price">Free</td></tr>
+            <tr class="highlight"><td><strong>Pilot, 60 days</strong></td><td>All your quote requests drafted from your own rate sheet. Cancel anytime.</td><td class="price">1,500 <small>/ month</small></td></tr>
+            <tr><td><strong>Standard</strong></td><td>Quotes plus tracking replies once the pilot proves out.</td><td class="price">2,500 <small>/ month</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="guarantee"><strong>Guarantee:</strong> if the pilot doesn't save your team at least 5 hours a week by day 30, the second month is free.</p>
+    </section>
+
+    <section class="block" id="faq" aria-labelledby="faq-h">
+      <div class="eyebrow">Questions</div>
+      <h2 id="faq-h">What forwarders ask us</h2>
+      <div class="faq">
+        <details><summary>Does it work with CargoWise?</summary><p>The pilot works from email, so it runs alongside CargoWise or any other system without touching it. Pushing quotes straight into CargoWise is on the roadmap once the pilot proves the value.</p></details>
+        <details><summary>What if it gets a price wrong?</summary><p>Prices come from your rate sheet by fixed rules, not from the AI, and your team reviews every draft before it goes out. If a lane isn't in your rates, the draft says so instead of guessing.</p></details>
+        <details><summary>What about vague requests?</summary><p>If key details are missing, like container size, Incoterms or the delivery address, the draft is a reply asking the customer for exactly those details.</p></details>
+        <details><summary>How long does setup take?</summary><p>About an hour on your side: one forwarding rule and filling in the rate sheet template. We load it and check the first drafts with you.</p></details>
+        <details><summary>Who sees our data?</summary><p>Only Laneworks, for processing your quotes. Forwarded emails are deleted after 30 days, and your rates are never shared or used to price for anyone else.</p></details>
+        <details><summary>Can it do tracking updates and invoice checks?</summary><p>Those are next. Quote requests come first because they eat the most hours and lose the most business when answered late.</p></details>
+      </div>
+    </section>
+
+    <section class="block" id="start" aria-labelledby="start-h">
+      <div class="closing">
+        <div>
+          <div class="eyebrow">Start the trial run</div>
+          <h2 id="start-h">Send us 10 quote requests</h2>
+          <p class="section-lede" style="margin-bottom:0">Forward 10 recent quote requests to the address here, removing anything sensitive. You'll get the drafted quotes back within one business day, priced from a sample tariff or from your own rates if you send them.</p>
+        </div>
+        <div class="contact-card">
+          <div class="eyebrow">Email</div>
+          <div class="addr" id="addr">rehan@getlaneworks.com</div>
+          <div><button class="btn primary" id="copy" type="button">Copy address</button></div>
+          <div class="copy-status" id="copy-status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>Laneworks is a product of Tessaro Pty Ltd · Melbourne, Australia</span>
+      <span>Example quote figures on this page use sample rates.</span>
+    </footer>
+  </div>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById("copy"), addr = document.getElementById("addr"), st = document.getElementById("copy-status");
+  function selectIt() {
+    var r = document.createRange(); r.selectNodeContents(addr);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    st.textContent = "Selected. Press Ctrl or Cmd + C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    try {
+      navigator.clipboard.writeText(addr.textContent.trim()).then(function () { st.textContent = "Copied."; }, selectIt);
+    } catch (e) { selectIt(); }
+  });
+})();
+</script>
+
+</body>
+</html>
