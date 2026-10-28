@@ -167,8 +167,11 @@ code{font:400 14px var(--mono);background:var(--blue-tint);color:var(--blue);pad
 .guar .seal{flex:none;width:68px;height:68px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font:800 13px/1.05 var(--head);text-align:center}
 .guar p{font-size:17px}
 
+.founding{margin-top:40px;background:var(--blue-tint);border-left:4px solid var(--blue);border-radius:12px;padding:18px 22px;font-size:17px;color:var(--ink-2)}
+.founding b{color:var(--ink)}
 .annual{margin-top:16px;font-size:17px;color:var(--ink-2)}
 .annual b{color:var(--ink)}
+.demo-video{display:block;width:100%;margin-top:36px;border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(11,26,46,.28);background:#fff;aspect-ratio:16/9}
 /* faq */
 .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 56px;margin-top:56px}
 .faq h3{font-size:19px;margin-bottom:8px}
@@ -231,8 +234,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <li><b>More quotes, no new hires</b> when volume spikes</li>
         </ul>
         <div class="cta-row">
-          <a class="btn" href="#start">Get 10 quotes drafted free</a>
-          <p class="reassure">Free on 10 of your real emails. No call, no integration, no contract.</p>
+          <a class="btn" href="#start">Get 3 quotes drafted free</a>
+          <p class="reassure">Free on 3 of your real emails. No call, no integration, no contract.</p>
         </div>
       </div>
 
@@ -263,6 +266,16 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     <span><b>5 hours a week</b> saved, or month two is free</span>
   </div></div>
 </header>
+
+<section class="demo" id="demo">
+  <div class="wrap">
+    <h2>See it work in 72 seconds.</h2>
+    <p class="sub">A real quote request, read, priced from the rate sheet and answered. No call needed.</p>
+    <video class="demo-video" controls playsinline preload="none" poster="laneworks-demo-poster.png">
+      <source src="laneworks-demo-720p.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
 
 <main>
 <section>
@@ -358,7 +371,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     </div>
     <div class="founder">
             <div>
-        <blockquote>"Send me 10 real quote requests. If the drafts aren't good enough to send, you've lost nothing but the two minutes it took to forward them."</blockquote>
+        <blockquote>"Send me 3 real quote requests. If the drafts aren't good enough to send, you've lost nothing but the two minutes it took to forward them."</blockquote>
         <cite>Rehan, founder of Laneworks · Melbourne. You'll deal with me directly.</cite>
       </div>
     </div>
@@ -368,15 +381,16 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 <section id="pricing">
   <div class="wrap">
     <h2>Start free. Pay only once it's saving you time.</h2>
+    <div class="founding"><b>Founding customers:</b> the first 3 forwarders get <b>half price, A$750 a month for 6 months</b>, in exchange for a short case study. Start with the free trial.</div>
     <div class="plans">
       <div class="plan">
-        <p class="name">Trial run</p><div class="price">Free</div><p class="per">10 of your real emails</p>
-        <ul><li>10 quotes drafted</li><li>Your rates or a sample tariff</li><li>Back within 1 business day</li></ul>
+        <p class="name">Trial run</p><div class="price">Free</div><p class="per">3 of your real emails</p>
+        <ul><li>3 quotes drafted, same day</li><li>Your rates or a sample tariff</li><li>Back the same business day</li></ul>
         <a class="btn" href="#start">Start free</a>
       </div>
       <div class="plan hot">
                 <p class="name">60-day pilot</p><div class="price">$1,500</div><p class="per">AUD / month, ex GST</p>
-        <ul><li>Every quote request drafted</li><li>Your full rate sheet loaded for you</li><li>Setup call and first-week review</li><li>Cancel anytime</li></ul>
+        <ul><li>Every quote request drafted</li><li>Your full rate sheet loaded for you</li><li>Setup done for you, no calls needed</li><li>Cancel anytime</li></ul>
         <a class="btn" href="#start">Start with the free trial</a>
       </div>
       <div class="plan">
@@ -406,10 +420,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 
 <section class="final" id="start">
   <div class="wrap">
-    <h2>See your own quotes answered by tomorrow.</h2>
-    <p class="sub">Forward 10 recent quote requests. We send back the drafted replies within one business day, priced from a sample tariff or your own rates. If they're not good enough to send, you've lost two minutes.</p>
+    <h2>See your own quotes answered today.</h2>
+    <p class="sub">Forward 3 recent quote requests. We send back the drafted replies the same business day, priced from a sample tariff or your own rates. If they're not good enough to send, you've lost two minutes.</p>
     <div class="addr">
-      <a class="btn" href="mailto:rehan@getlaneworks.com?subject=Free%20trial%20run&amp;body=Hi%20Rehan%2C%0A%0AForwarding%2010%20recent%20quote%20requests%20for%20the%20free%20trial.%0A%0ACompany%3A%20%0A">Email us your 10 quotes</a>
+      <a class="btn" href="mailto:rehan@getlaneworks.com?subject=Free%20trial%20run&amp;body=Hi%20Rehan%2C%0A%0AForwarding%203%20recent%20quote%20requests%20for%20the%20free%20trial.%0A%0ACompany%3A%20%0A">Email us your 3 quotes</a>
       <span class="mail-addr" id="addr">rehan@getlaneworks.com</span>
       <button class="copy" id="copy" type="button">Copy address</button>
     </div>
@@ -417,9 +431,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 </section>
 </main>
 
-<footer><div class="wrap"><span>Laneworks is a product of Tessaro Pty Ltd · Melbourne, Australia</span><span>Example figures use sample rates.</span></div></footer>
+<footer><div class="wrap"><span>Laneworks is a product of Tessaro Pty Ltd (ACN 697 269 846) · Melbourne, Australia</span><span><a href="/privacy.html" style="color:inherit">Privacy</a> · <a href="/unsubscribe.html" style="color:inherit">Unsubscribe</a> · Example figures use sample rates.</span></div></footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="#start">Get 10 quotes drafted free</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#start">Get 3 quotes drafted free</a></div>
 
 <script>
 const $=id=>document.getElementById(id);
