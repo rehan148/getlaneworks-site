@@ -190,6 +190,8 @@ footer{background:var(--navy);color:#7F91A8;font-size:14px;border-top:1px solid 
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:28px 24px 40px}
 
 /* mobile sticky CTA */
+.paid{background:var(--green-tint);border-bottom:1px solid var(--green);color:var(--ink);font-size:17px;padding:16px 0}
+.paid b{color:var(--green)}
 .sticky{display:none}
 @media (max-width:900px){
   .wrap{padding:0 16px}
@@ -433,10 +435,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 
 <footer><div class="wrap"><span>Laneworks is a product of Tessaro Pty Ltd (ACN 697 269 846) · Melbourne, Australia</span><span><a href="/privacy.html" style="color:inherit">Privacy</a> · <a href="/unsubscribe.html" style="color:inherit">Unsubscribe</a> · Example figures use sample rates.</span></div></footer>
 
+<div class="paid" id="paid" hidden><div class="wrap"><b>Thanks, you're set up.</b> Rehan will email you today to get started: one forwarding rule and your rate sheet, and the drafts begin.</div></div>
 <div class="sticky" id="sticky"><a class="btn" href="#start">Get 3 quotes drafted free</a></div>
 
 <script>
 const $=id=>document.getElementById(id);
+if(location.search.includes('paid=1')){const b=$('paid');b.hidden=false;document.body.prepend(b);}
 function calc(){
   const q=+$('q').value,m=+$('m').value,r=+$('r').value;
   $('qv').textContent=q;$('mv').textContent=m;$('rv').textContent='$'+r;
