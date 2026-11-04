@@ -30,7 +30,8 @@ a{color:var(--ink)}footer{border-top:1px solid var(--line);margin-top:80px;paddi
 <body><div class="wrap"><div class="top"><a class="logo" href="/"><i></i>Laneworks</a></div>
 <h1>What a draft looks like</h1>
 <p>A customer sent this quote request to a forwarder. The forwarder forwarded it to their Laneworks address. About two minutes later, this landed in the ops inbox. Every number comes from the forwarder's own rate sheet (here, a sample tariff); nothing is guessed.</p>
-<h2>1. The customer's email</h2>
+<p style="font-size:15px">Examples: <a href="#au">Australia (AUD)</a> · <a href="#us">United States (USD)</a></p>
+<h2 id="au">1. The customer's email</h2>
 <div class="req">From: Daniel Ho &lt;daniel@harbourline-example.com.au&gt;
 Subject: Quote request - 40HC Ningbo
 
@@ -117,6 +118,95 @@ ORIGINAL REQUEST (as Laneworks read it)
 -- 
 Laneworks drafts only. It never emails your customer. Check the numbers, then send from your own mailbox.
 Ref: &lt;CAF0demo-fcl-0001@mail.harbourline-example.com.au&gt;</pre>
+<h2 id="us">The same request into the US</h2>
+<p>Same customer email, sent to a US forwarder whose rate sheet is in USD. The draft adds the US lines a complete quote needs: entry and ISF filing, pier pass for Los Angeles/Long Beach, and trucking to the ZIP code. Mixed-currency sheets (USD freight with CAD or GBP local charges) show a total for each currency.</p>
+<div class="req">From: Dana Reyes &lt;dana@harborline-example.com&gt;
+Subject: Quote request - 40HC Ningbo
+
+Hi team,
+
+Can you please quote 1 x 40HC FOB Ningbo to Long Beach, door delivery to Ontario, CA 91761.
+
+Cargo is outdoor furniture, approx 9,800 kg / 62 cbm. Cargo ready Nov 14. We&#x27;ll need customs clearance too.
+
+Thanks,
+Dana
+Harborline Home (example)</div>
+<pre>LANEWORKS DRAFT QUOTE  |  READY TO SEND
+==================================================================
+Reply to:          Dana Reyes &lt;dana@harborline-example.com&gt;
+Their subject:     Quote request - 40HC Ningbo
+Suggested subject: RE: Quote request - 40HC Ningbo
+For:               Your Freight Co
+
+1. REPLY TO SEND  (check it, then send from your own mailbox)
+------------------------------------------------------------------
+Hi Dana,
+
+Thanks for the enquiry. Please see our quote for 1 x 40HC, FOB Ningbo to Long Beach, delivered to Ontario, CA 91761.
+
+Ocean freight 1 x 40HC .............................. USD 2,150.00
+Destination terminal &amp; delivery order 1 x 40HC ........ USD 185.00
+Pier pass / clean truck fee 1 x 40HC ................... USD 75.00
+Door delivery 1 x 40HC (LA basin &amp; Inland Empire) ..... USD 650.00
+Customs entry (up to 3 HTS lines) &amp; ISF filing ........ USD 125.00
+------------------------------------------------------------------
+TOTAL ............................................... USD 3,185.00
+
+Valid 14 days (until 18 Nov 2026). Excludes duty and tariffs, MPF/HMF,
+exam fees, chassis split, storage, demurrage and detention. Cargo ready
+Nov 14: we&#x27;ll confirm the next sailing once you approve.
+
+Best regards,
+[Your name]
+Your Freight Co
+
+2. WHAT WE READ  |  Shipment: Ningbo -&gt; Long Beach (FCL)  |  Ready to send
+------------------------------------------------------------------
+  Mode:              FCL
+  From:              Ningbo, China
+  To:                Long Beach, United States
+  Incoterm:          FOB
+  Containers:        1 x 40HC
+  Weight:            9,800 kg
+  Volume:            62 cbm
+  Commodity:         Outdoor furniture
+  Cargo ready:       Nov 14
+  Door delivery:     Ontario, CA 91761
+  Delivery postcode: 91761
+  Customs clearance: Yes
+  Contact:           Dana
+  Company:           Harborline Home
+
+3. PRICE BREAKDOWN  |  rate sheet: your-rates.xlsx
+------------------------------------------------------------------
+Ocean freight 1 x 40HC .............................. USD 2,150.00
+      source: FCL row 12 (40HC)  |  1 x 2,150.00
+Destination terminal &amp; delivery order 1 x 40HC ........ USD 185.00
+      source: Local charges row 5  |  1 x 185.00
+Pier pass / clean truck fee 1 x 40HC ................... USD 75.00
+      source: Local charges row 6  |  1 x 75.00
+Door delivery 1 x 40HC (LA basin &amp; Inland Empire) ..... USD 650.00
+      source: Door delivery row 3 (LA basin &amp; Inland Empire, 40&#x27;)  |  1 x 650.00
+Customs entry (up to 3 HTS lines) &amp; ISF filing ........ USD 125.00
+      source: Settings row 7 (Customs clearance fee)  |  125.00
+TOTAL ............................................... USD 3,185.00
+
+ORIGINAL REQUEST (as Laneworks read it)
+------------------------------------------------------------------
+  Hi team,
+  
+  Can you please quote 1 x 40HC FOB Ningbo to Long Beach, door delivery to Ontario, CA 91761.
+  
+  Cargo is outdoor furniture, approx 9,800 kg / 62 cbm. Cargo ready Nov 14. We&#x27;ll need customs clearance too.
+  
+  Thanks,
+  Dana
+  Harborline Home (example)
+
+-- 
+Laneworks drafts only. It never emails your customer. Check the numbers, then send from your own mailbox.
+Ref: &lt;US0demo-fcl-0001@mail.harborline-example.com&gt;</pre>
 <h2>Try it on one of yours</h2>
 <p>Forward a real quote request to <b>try@getlaneworks.com</b> and the drafted reply comes straight back, priced from the sample tariff. Send your rate sheet and every line comes from your rates.</p>
 <a class="btn" href="mailto:try@getlaneworks.com?subject=Fwd%3A%20quote%20request">Forward a quote request</a>
