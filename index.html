@@ -343,14 +343,20 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         <input id="m" type="range" min="5" max="45" step="1" value="15">
         <label for="r">Ops staff cost per hour (AUD) <b id="rv">$45</b></label>
         <input id="r" type="range" min="30" max="90" step="5" value="45">
+        <label for="j">Extra jobs won a month <b id="jv">4</b></label>
+        <input id="j" type="range" min="0" max="20" step="1" value="4">
+        <label for="g">Gross profit per job (AUD) <b id="gv">$400</b></label>
+        <input id="g" type="range" min="100" max="2000" step="50" value="400">
       </div>
       <div class="result">
         <div class="n" id="hrs">37</div>
         <p class="l">hours back to your team every month</p>
         <div class="row"><span>Staff time saved per month</span><b id="val">$1,670</b></div>
         <div class="row"><span>Hours back per year</span><b id="yr">456</b></div>
-        <div class="row"><span>Staff time saved per year</span><b id="yv">$20,500</b></div>
-        <p class="fine">Assumes 2 minutes to check each reply. Staff time only, before the extra bookings faster replies win.</p>
+        <div class="row"><span>Profit from extra jobs won per month</span><b id="jw">$1,600</b></div>
+        <div class="row"><span>Total value per month</span><b id="tv">$3,270</b></div>
+        <div class="row"><span>Value for every $1 of a A$1,500 plan</span><b id="rx">$2.18</b></div>
+        <p class="fine">Assumes 2 minutes to check each reply. Jobs won are your own estimate: set it to 0 to see staff time alone.</p>
       </div>
     </div>
   </div>
@@ -436,8 +442,12 @@ function calc(){
   $('hrs').textContent=Math.round(hrs);
   $('val').textContent='$'+Math.round(hrs*r).toLocaleString('en-AU');
   $('yr').textContent=Math.round(hrs*12).toLocaleString('en-AU');$('yv').textContent='$'+(Math.round(hrs*12*r/100)*100).toLocaleString('en-AU');
+  const j=+$('j').value,g=+$('g').value;$('jv').textContent=j;$('gv').textContent='$'+g.toLocaleString('en-AU');
+  const won=j*g,tot=hrs*r+won;
+  $('jw').textContent='$'+Math.round(won).toLocaleString('en-AU');$('tv').textContent='$'+Math.round(tot).toLocaleString('en-AU');
+  $('rx').textContent='$'+(tot/1500).toFixed(2);
 }
-['q','m','r'].forEach(i=>$(i).addEventListener('input',calc));calc();
+['q','m','r','j','g'].forEach(i=>$(i).addEventListener('input',calc));calc();
 $('copy').addEventListener('click',async e=>{try{await navigator.clipboard.writeText($('addr').textContent);e.target.textContent='Copied';setTimeout(()=>e.target.textContent='Copy address',1600)}catch(_){}});
 const hero=document.querySelector('.hero'),fin=$('start'),st=$('sticky');
 function stick(){const h=hero.getBoundingClientRect().bottom<0,f=fin.getBoundingClientRect().top<innerHeight;st.classList.toggle('on',h&&!f)}
