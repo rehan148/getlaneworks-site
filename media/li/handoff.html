@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Laneworks</title></head>
+<body style="font:16px system-ui;padding:24px">Preparing file…<script>
+(async()=>{const q=new URLSearchParams(location.search);const f=q.get('f')||'rate-sheet-checklist.pdf';
+const r=await fetch('/media/li/'+f.replace(/[^a-z0-9.\-]/gi,''));const b=await r.blob();
+if(window.opener){window.opener.postMessage({lwpdf:b,name:f},'https://www.linkedin.com');document.body.textContent='Sent. You can close this tab.';setTimeout(()=>window.close(),800);}
+else document.body.textContent='No opener.';})();
+</script></body></html>
