@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Freight Quote Margin Check: Find Quotes Sent Below Your Rates | Laneworks</title>
+<meta name="description" content="A free margin check for freight forwarders: last month's quotes re-priced from your own rates, with every quote that went out below cost, below your markup or missing a charge marked. Download a sample.">
+<link rel="canonical" href="https://getlaneworks.com/solutions/freight-quote-margin-check.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the margin check really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No card, no contract, no call needed. You get the checked workbook and the summary either way."}}, {"@type": "Question", "name": "What format do the quotes need to be in?", "acceptedAnswer": {"@type": "Answer", "text": "Any export with one row per quote: origin, destination, container type or weight and volume, and the amount quoted. Laneworks finds the header row and the columns itself; a sheet it can't read is reported, not guessed at."}}, {"@type": "Question", "name": "What if our quotes are in different currencies?", "acceptedAnswer": {"@type": "Answer", "text": "Quotes in the rate sheet's currency are checked. Others are marked 'Not checked' with the reason, so nothing is converted at a guessed rate."}}, {"@type": "Question", "name": "Who sees our data?", "acceptedAnswer": {"@type": "Answer", "text": "Only the Laneworks team running the check. It is never used to train AI models and is deleted after 30 days."}}, {"@type": "Question", "name": "Does it work with CargoWise?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A quote export from CargoWise, or any spreadsheet your team keeps, works as it is."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{--ink:#0B1A2E;--ink-2:#475467;--line:#E8EBF0;--orange:#FF5B1F;--orange-d:#E84A10;--navy:#0B1A2E;--soft:#F6F8FB}
+*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;color:var(--ink);font:400 17px/1.65 Geist,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}.top{display:flex;align-items:center;height:72px}
+.logo{font:700 20px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;text-decoration:none;color:inherit;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;border-radius:5px;background:var(--navy);position:relative;display:inline-block}.logo i::after{content:"";position:absolute;left:5px;right:5px;top:9px;height:4px;background:#fff;border-radius:2px}
+.back{margin-left:auto;font-size:14px;color:#8A94A3;text-decoration:none}.back:hover{color:var(--ink)}
+h1{font:700 clamp(34px,5.5vw,54px)/1.03 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:48px 0 16px;max-width:780px}
+h2{font:700 clamp(24px,3vw,30px)/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:64px 0 14px}
+h3{font:600 18px/1.3 Geist,sans-serif;margin:0 0 6px}
+p,li{color:var(--ink-2)}p+p{margin-top:12px}a{color:var(--ink)}b{color:var(--ink);font-weight:600}
+.lede{font-size:19px;max-width:680px}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;padding:16px 24px;border-radius:10px}.btn:hover{background:var(--orange-d)}
+.link{margin-left:16px;font-weight:500}.ctas{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.step{border:1px solid var(--line);border-radius:14px;padding:20px}.step em{font:700 13px Geist,sans-serif;font-style:normal;color:var(--orange-d);display:block;margin-bottom:8px}
+.cmp{width:100%;border-collapse:collapse;margin-top:16px;font-size:15px}.cmp th,.cmp td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp th{font-weight:600;color:var(--ink)}.cmp td{color:var(--ink-2)}.cmp td:first-child{color:var(--ink);font-weight:500}
+.scroll{overflow-x:auto}.cmp{min-width:600px}.cmp td:last-child,.cmp th:last-child{background:#FFF8F4;color:var(--ink)}
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.pc{border:1px solid var(--line);border-radius:14px;padding:20px}.pc.hi{border-color:var(--orange);background:#FFF8F4}.pc strong{font:700 28px/1.1 "Bricolage Grotesque",sans-serif;display:block;margin:6px 0}
+.faq h3{margin-top:22px}
+.cta{background:var(--navy);border-radius:18px;padding:32px;margin-top:64px}.cta h2{color:#fff;margin:0 0 10px}.cta p{color:#C9D3E0}
+ul{padding-left:20px;display:grid;gap:6px}
+footer{border-top:1px solid var(--line);margin-top:72px;padding:28px 0 48px;font-size:14px;color:#8A94A3}
+@media (max-width:560px){.link{margin-left:0;width:100%}.cta{padding:24px}}</style></head>
+<body><div class="wrap"><div class="top"><a class="logo" href="/"><i></i>Laneworks</a><a class="back" href="/solutions/">All solutions</a></div>
+
+<h1>Find the quotes that went out below your own rates</h1>
+<p class="lede">Busy quoting desks leak margin quietly: a destination charge left off, an expired rate used, a markup forgotten on a rush quote. The Laneworks margin check re-prices last month's quotes from your own rate sheet and marks every one that went out below cost, below your markup, or missing a charge. It's free, and it takes one email.</p>
+<div class="ctas"><a class="btn" href="mailto:try@getlaneworks.com?subject=Fwd%3A%20quote%20request">Forward one real quote request</a><a class="link" href="/sample.html">See a sample draft</a></div>
+<p style="font-size:14px;color:#8A94A3;margin-top:12px">Free trial: forward a request to try@getlaneworks.com and the draft comes back in about two minutes. No sign-up, no call.</p>
+
+<h2>See it on a sample month</h2>
+<p>Below is a month of sample quotes, checked against a demonstration rate sheet with a 15% markup. Every quote gets the cost from the rates, the price at the markup, the difference and a result. Where the gap matches a single charge exactly, the note asks whether it was left off.</p>
+<style>.mc td,.mc th{padding:7px 10px;vertical-align:top;border-bottom:1px solid #eee}.mc td:nth-child(n+4):nth-child(-n+6){white-space:nowrap;text-align:right}</style><div style="overflow-x:auto"><table class="mc" style="border-collapse:collapse;font-size:14px;min-width:820px">
+<tr style="text-align:left;border-bottom:1px solid #ddd"><th>Row</th><th>Lane</th><th>Equip.</th><th>Quoted</th><th>Price at your markup</th><th>Difference</th><th>Result</th><th>Laneworks notes</th></tr>
+<tr><td>11</td><td>Qingdao to Adelaide</td><td>40HC</td><td>AUD 3,540.00</td><td>4,232.00</td><td>-692.00</td><td style="background:#F8D7DA">Below cost</td><td>AUD 692.00 under the price from your rates</td></tr>
+<tr><td>17</td><td>Shanghai to Melbourne</td><td>40HC</td><td>AUD 3,335.00</td><td>4,232.00</td><td>-897.00</td><td style="background:#F8D7DA">Below cost</td><td>AUD 897.00 under the price from your rates; matches the Destination terminal &amp; docs 1 x 40HC line (AUD 897.00): was it left off?</td></tr>
+<tr><td>5</td><td>Guangzhou to Fremantle</td><td>20GP</td><td>AUD 2,808.00</td><td>3,024.50</td><td>-216.50</td><td style="background:#FFF3CD">Below your markup</td><td>AUD 216.50 under the price from your rates</td></tr>
+<tr><td>6</td><td>Ningbo to Brisbane</td><td>40GP</td><td>AUD 4,232.00</td><td>4,232.00</td><td>0.00</td><td style="background:#D4EDDA">Matches your rates</td><td></td></tr>
+<tr><td>4</td><td>Qingdao to Fremantle</td><td>40GP</td><td>AUD 4,552.00</td><td>4,232.00</td><td>320.00</td><td style="background:#D1ECF1">Above your rates</td><td></td></tr>
+<tr><td>3</td><td>Ningbo to Fremantle</td><td>40HC</td><td>USD 2,793.00</td><td></td><td></td><td style="background:#E9ECEF">Not checked</td><td>Quoted in USD, rates in AUD: not compared</td></tr>
+<tr><td>15</td><td>Chittagong to Melbourne</td><td>40HC</td><td>AUD 4,100.00</td><td></td><td></td><td style="background:#E9ECEF">Not checked</td><td>No FCL rate from Chittagong to Melbourne in the rate sheet</td></tr>
+</table></div>
+<p style="font-size:14px;color:#8A94A3">7 of the 20 rows in the sample below (demonstration rates with a 15% markup; sample quotes, not a real forwarder's).</p>
+<p>The summary for this sample reads: <i>Shortfall against your own rates on these quotes: AUD 3,527.00. If these were one month&#x27;s quotes, that&#x27;s about AUD 42,324.00 a year.</i></p>
+<p><a class="btn" href="/downloads/sample-quotes-margin-check.xlsx">Download the checked sample (.xlsx)</a> <a class="link" href="/downloads/sample-quotes-october.xlsx" style="margin-left:14px">The quotes as sent</a> <a class="link" href="/downloads/sample-rate-sheet-15pc-markup.xlsx" style="margin-left:14px">The rate sheet</a></p>
+<h2>How to get yours, free</h2>
+<ol>
+<li><b>Export last month's quotes</b> from CargoWise, your quoting tool or your spreadsheet: one row per quote with origin, destination, container or weight, and the total quoted. 50 is plenty; send more if you like.</li>
+<li><b>Attach the rate sheet</b> your team quoted from, as it is. Excel, CSV or PDF.</li>
+<li><b>Email both to rehan@getlaneworks.com.</b> Within one working day you get the same workbook back with five columns added, plus a one-page summary of the shortfall.</li>
+</ol>
+<p>Your quotes and rates are used only to run the check, never to train AI models, and are deleted after 30 days.</p>
+<h2>What it catches</h2>
+<ul>
+<li><b>Below cost:</b> quotes that didn't even cover the rates on your own sheet.</li>
+<li><b>Below your markup:</b> quotes that covered cost but not the margin your sheet says to charge.</li>
+<li><b>Charges left off:</b> where the gap equals one charge on your sheet, the note names it.</li>
+<li><b>Lanes your sheet doesn't cover:</b> marked "Not checked" with the reason, never estimated. These are also the lanes your next rate request should ask for.</li>
+</ul>
+<h2>Nothing is guessed</h2>
+<p>Each quote is re-priced by the same fixed rules Laneworks uses to price live quote requests: port, container size, rate validity on the quote date, every local charge on your sheet, your markup. No AI sets a number. <a href="/how-pricing-works.html">How a Laneworks price is set</a></p>
+<h2>Then stop the leak</h2>
+<p>If the check finds margin going missing, Laneworks can price every quote request from your rates going forward, so each one carries every charge at your markup and your team checks before it's sent. Tenders are priced the same way. <a href="/enterprise.html">Laneworks Enterprise</a> · <a href="/solutions/freight-tender-pricing.html">Tender pricing</a></p>
+
+<h2>Questions</h2>
+<div class="faq">
+<h3>Is the margin check really free?</h3><p>Yes. No card, no contract, no call needed. You get the checked workbook and the summary either way.</p>
+<h3>What format do the quotes need to be in?</h3><p>Any export with one row per quote: origin, destination, container type or weight and volume, and the amount quoted. Laneworks finds the header row and the columns itself; a sheet it can't read is reported, not guessed at.</p>
+<h3>What if our quotes are in different currencies?</h3><p>Quotes in the rate sheet's currency are checked. Others are marked 'Not checked' with the reason, so nothing is converted at a guessed rate.</p>
+<h3>Who sees our data?</h3><p>Only the Laneworks team running the check. It is never used to train AI models and is deleted after 30 days.</p>
+<h3>Does it work with CargoWise?</h3><p>Yes. A quote export from CargoWise, or any spreadsheet your team keeps, works as it is.</p>
+</div>
+
+<div class="cta"><h2>Try it on one of today's requests</h2>
+<p>Forward a real quote request to <b style="color:#fff">try@getlaneworks.com</b>. The priced draft comes back in about two minutes.</p>
+<p style="margin-top:18px"><a class="btn" href="mailto:try@getlaneworks.com?subject=Fwd%3A%20quote%20request">Forward a quote request</a></p></div>
+
+<p style="margin-top:32px;font-size:15px">Related: <a href="/freight-quoting-software.html">Freight quoting software</a> · <a href="/best-freight-quoting-software.html">Best freight quoting software 2026</a> · <a href="/freight-quote-faq.html">Freight quote FAQ</a> · <a href="/freight-calculator.html">Freight calculator</a></p>
+<footer>© 2026 Laneworks · <a href="/privacy.html">Privacy</a> · <a href="/security.html">Security</a> · <a href="/solutions/">Solutions</a> · <a href="/freight-calculator.html">Freight calculator</a> · <a href="/blog/">Articles</a></footer></div></body></html>
