@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Freight Tender Pricing: Every Lane Priced From Your Rates | Laneworks</title>
+<meta name="description" content="Freight tender pricing for forwarders: a shipper's tender workbook priced lane by lane from your own rates, with agent rate requests for missing lanes. Download a 28-lane sample.">
+<link rel="canonical" href="https://getlaneworks.com/solutions/freight-tender-pricing.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does a tender take?", "acceptedAnswer": {"@type": "Answer", "text": "Usually the same afternoon for a few hundred lanes, once your rates are loaded. The lanes your rates don't cover wait only on your agents' replies."}}, {"@type": "Question", "name": "What format does the tender need to be in?", "acceptedAnswer": {"@type": "Answer", "text": "The shipper's own Excel workbook, as received. Laneworks finds the header row and the origin, destination, equipment and volume columns; a sheet it can't read is reported, not guessed at."}}, {"@type": "Question", "name": "Can we try it on one of ours?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Email a recent tender and the rates you'd price it from to rehan@getlaneworks.com and it comes back priced, free."}}, {"@type": "Question", "name": "Does it work with CargoWise?", "acceptedAnswer": {"@type": "Answer", "text": "It works alongside it by email. Rates exported from CargoWise or kept in Excel are loaded as they are."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{--ink:#0B1A2E;--ink-2:#475467;--line:#E8EBF0;--orange:#FF5B1F;--orange-d:#E84A10;--navy:#0B1A2E;--soft:#F6F8FB}
+*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;color:var(--ink);font:400 17px/1.65 Geist,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}.top{display:flex;align-items:center;height:72px}
+.logo{font:700 20px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;text-decoration:none;color:inherit;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;border-radius:5px;background:var(--navy);position:relative;display:inline-block}.logo i::after{content:"";position:absolute;left:5px;right:5px;top:9px;height:4px;background:#fff;border-radius:2px}
+.back{margin-left:auto;font-size:14px;color:#8A94A3;text-decoration:none}.back:hover{color:var(--ink)}
+h1{font:700 clamp(34px,5.5vw,54px)/1.03 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:48px 0 16px;max-width:780px}
+h2{font:700 clamp(24px,3vw,30px)/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:64px 0 14px}
+h3{font:600 18px/1.3 Geist,sans-serif;margin:0 0 6px}
+p,li{color:var(--ink-2)}p+p{margin-top:12px}a{color:var(--ink)}b{color:var(--ink);font-weight:600}
+.lede{font-size:19px;max-width:680px}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;padding:16px 24px;border-radius:10px}.btn:hover{background:var(--orange-d)}
+.link{margin-left:16px;font-weight:500}.ctas{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.step{border:1px solid var(--line);border-radius:14px;padding:20px}.step em{font:700 13px Geist,sans-serif;font-style:normal;color:var(--orange-d);display:block;margin-bottom:8px}
+.cmp{width:100%;border-collapse:collapse;margin-top:16px;font-size:15px}.cmp th,.cmp td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp th{font-weight:600;color:var(--ink)}.cmp td{color:var(--ink-2)}.cmp td:first-child{color:var(--ink);font-weight:500}
+.scroll{overflow-x:auto}.cmp{min-width:600px}.cmp td:last-child,.cmp th:last-child{background:#FFF8F4;color:var(--ink)}
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.pc{border:1px solid var(--line);border-radius:14px;padding:20px}.pc.hi{border-color:var(--orange);background:#FFF8F4}.pc strong{font:700 28px/1.1 "Bricolage Grotesque",sans-serif;display:block;margin:6px 0}
+.faq h3{margin-top:22px}
+.cta{background:var(--navy);border-radius:18px;padding:32px;margin-top:64px}.cta h2{color:#fff;margin:0 0 10px}.cta p{color:#C9D3E0}
+ul{padding-left:20px;display:grid;gap:6px}
+footer{border-top:1px solid var(--line);margin-top:72px;padding:28px 0 48px;font-size:14px;color:#8A94A3}
+@media (max-width:560px){.link{margin-left:0;width:100%}.cta{padding:24px}}</style></head>
+<body><div class="wrap"><div class="top"><a class="logo" href="/"><i></i>Laneworks</a><a class="back" href="/solutions/">All solutions</a></div>
+
+<h1>Freight tender pricing, lane by lane, from your own rates</h1>
+<p class="lede">A shipper's tender is a spreadsheet of lanes, and filling it in by hand takes a pricing team days. Laneworks reads the workbook, prices every lane from your own rates by fixed rules, and sends the same workbook back with the price columns filled in, usually the same afternoon. Lanes your rates don't cover are marked, with the rate request to your agents already written.</p>
+<div class="ctas"><a class="btn" href="mailto:try@getlaneworks.com?subject=Fwd%3A%20quote%20request">Forward one real quote request</a><a class="link" href="/sample.html">See a sample draft</a></div>
+<p style="font-size:14px;color:#8A94A3;margin-top:12px">Free trial: forward a request to try@getlaneworks.com and the draft comes back in about two minutes. No sign-up, no call.</p>
+
+<h2>See it on a sample tender</h2>
+<p>Below is a 28-lane ocean tender of the kind a shipper sends, and the same workbook after Laneworks priced it from a demonstration rate sheet: 24 lanes priced, 4 marked "Rate needed" with the reason.</p>
+<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:14px;min-width:640px">
+<tr style="text-align:left;border-bottom:1px solid #ddd"><th>Lane</th><th>From</th><th>To</th><th>Equip.</th><th>Per year</th><th>Freight</th><th>Destination</th><th>Total</th><th>Laneworks notes</th></tr>
+<tr><td>1</td><td>Guangzhou</td><td>Adelaide</td><td>20GP</td><td>24</td><td>1,850</td><td>780</td><td>AUD 2,630</td><td>FCL row 22 (20GP)</td></tr>
+<tr><td>2</td><td>Guangzhou</td><td>Brisbane</td><td>40GP</td><td>120</td><td>2,900</td><td>780</td><td>AUD 3,680</td><td>FCL row 20 (40GP)</td></tr>
+<tr><td>3</td><td>Guangzhou</td><td>Fremantle</td><td>40HC</td><td>12</td><td>2,900</td><td>780</td><td>AUD 3,680</td><td>FCL row 21 (40HC)</td></tr>
+<tr><td>25</td><td>Haiphong</td><td>Melbourne</td><td>40GP</td><td>36</td><td></td><td></td><td></td><td>Rate needed: no FCL rate from Haiphong to Melbourne in the rate sheet</td></tr>
+<tr><td>26</td><td>Chittagong</td><td>Sydney</td><td>40GP</td><td>90</td><td></td><td></td><td></td><td>Rate needed: no FCL rate from Chittagong to Sydney in the rate sheet</td></tr>
+</table></div>
+<p style="font-size:14px;color:#8A94A3">Five of the 28 rows, from the sample below (demonstration rates, FOB terms, so no origin charges).</p>
+<p><a class="btn" href="/downloads/sample-ocean-tender-priced.xlsx">Download the priced tender (.xlsx)</a> <a class="link" href="/downloads/sample-ocean-tender.xlsx" style="margin-left:14px">The tender as the shipper sent it</a></p>
+<h2>What comes back</h2>
+<ul>
+<li><b>The shipper's own workbook</b>: their columns, rows and layout untouched, with freight, origin charges, destination charges, total, currency and validity added to every lane.</li>
+<li><b>The source of every price</b>: each row names the rate-sheet row it came from, so your pricing team can check any lane in seconds.</li>
+<li><b>Lanes your rates don't cover</b>: marked "Rate needed" with the reason, never estimated.</li>
+<li><b>The agent rate request</b>: one email listing the missing lanes with volumes and exactly what to send back.</li>
+<li><b>A summary</b>: lanes priced, lanes waiting on a rate, and the annual value of the priced lanes at the shipper's stated volumes.</li>
+</ul>
+<h2>Nothing is guessed</h2>
+<p>Lanes are matched to your rates by fixed rules: port, container size, validity on the shipment date. No AI sets a price. Your markup is applied the way it is written in your rate sheet, per lane, customer or mode. <a href="/how-pricing-works.html">How a Laneworks price is set</a></p>
+<h2>For larger forwarders</h2>
+<p>Tender pricing is part of Laneworks Enterprise, alongside day-to-day quote replies for every branch, custom quotes chased with your agents, and a free margin check of last month's quotes. <a href="/enterprise.html">Laneworks Enterprise</a></p>
+
+<h2>Questions</h2>
+<div class="faq">
+<h3>How long does a tender take?</h3><p>Usually the same afternoon for a few hundred lanes, once your rates are loaded. The lanes your rates don't cover wait only on your agents' replies.</p>
+<h3>What format does the tender need to be in?</h3><p>The shipper's own Excel workbook, as received. Laneworks finds the header row and the origin, destination, equipment and volume columns; a sheet it can't read is reported, not guessed at.</p>
+<h3>Can we try it on one of ours?</h3><p>Yes. Email a recent tender and the rates you'd price it from to rehan@getlaneworks.com and it comes back priced, free.</p>
+<h3>Does it work with CargoWise?</h3><p>It works alongside it by email. Rates exported from CargoWise or kept in Excel are loaded as they are.</p>
+</div>
+
+<div class="cta"><h2>Try it on one of today's requests</h2>
+<p>Forward a real quote request to <b style="color:#fff">try@getlaneworks.com</b>. The priced draft comes back in about two minutes.</p>
+<p style="margin-top:18px"><a class="btn" href="mailto:try@getlaneworks.com?subject=Fwd%3A%20quote%20request">Forward a quote request</a></p></div>
+
+<p style="margin-top:32px;font-size:15px">Related: <a href="/freight-quoting-software.html">Freight quoting software</a> · <a href="/best-freight-quoting-software.html">Best freight quoting software 2026</a> · <a href="/freight-quote-faq.html">Freight quote FAQ</a> · <a href="/freight-calculator.html">Freight calculator</a></p>
+<footer>© 2026 Laneworks · <a href="/privacy.html">Privacy</a> · <a href="/security.html">Security</a> · <a href="/solutions/">Solutions</a> · <a href="/freight-calculator.html">Freight calculator</a> · <a href="/blog/">Articles</a></footer></div></body></html>
