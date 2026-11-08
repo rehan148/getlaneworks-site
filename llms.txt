@@ -16,6 +16,7 @@ Key facts:
 - [Enterprise](https://getlaneworks.com/enterprise.html): managed quote desk for multi-branch forwarders
 - [Sample draft reply](https://getlaneworks.com/sample.html)
 - [Security and data](https://getlaneworks.com/security.html)
+- [AI governance for freight quoting](https://getlaneworks.com/solutions/ai-quoting-governance.html): human review, audit trail, data handling, mapped to IFCBAA's AI position paper
 
 ## Proof and free tools
 - [Quote accuracy benchmark](https://getlaneworks.com/solutions/freight-quote-accuracy-benchmark.html)
