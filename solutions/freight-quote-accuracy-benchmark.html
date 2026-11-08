@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Freight Quote Accuracy Benchmark: 22 Real-World Requests, Every Price Checked | Laneworks</title>
+<meta name="description" content="22 messy, real-world freight quote requests run through Laneworks against a published rate sheet: port codes, EXW, air volumetric, LCL W/M, reefer, DG, attachments. Every total checked by hand. Download the test set.">
+<link rel="canonical" href="https://getlaneworks.com/solutions/freight-quote-accuracy-benchmark.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Were these requests written to make Laneworks look good?", "acceptedAnswer": {"@type": "Answer", "text": "They were written to cover what goes wrong on a real desk: codes, typos, reply chains, attachments, cargo the sheet can't price. Download the set and judge for yourself, or send your own requests and we'll run those instead."}}, {"@type": "Question", "name": "Why are some results counted as correct without a price?", "acceptedAnswer": {"@type": "Answer", "text": "Because the right answer was not to price. A reefer or dangerous-goods request priced off a dry general-cargo sheet would be a wrong quote; flagging it for a real rate is the correct outcome."}}, {"@type": "Question", "name": "Does the AI ever set a price?", "acceptedAnswer": {"@type": "Answer", "text": "No. The AI reads the email and pulls out the shipment details. Every amount comes from the rate sheet by fixed rules, and each line on the draft names the sheet row it came from."}}, {"@type": "Question", "name": "Can we run this test on our own rates?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, free. Send 20 recent requests and the rate sheet your team used to rehan@getlaneworks.com and you get the scored workbook back within one working day."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{--ink:#0B1A2E;--ink-2:#475467;--line:#E8EBF0;--orange:#FF5B1F;--orange-d:#E84A10;--navy:#0B1A2E;--soft:#F6F8FB}
+*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;color:var(--ink);font:400 17px/1.65 Geist,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}.top{display:flex;align-items:center;height:72px}
+.logo{font:700 20px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;text-decoration:none;color:inherit;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;border-radius:5px;background:var(--navy);position:relative;display:inline-block}.logo i::after{content:"";position:absolute;left:5px;right:5px;top:9px;height:4px;background:#fff;border-radius:2px}
+.back{margin-left:auto;font-size:14px;color:#8A94A3;text-decoration:none}.back:hover{color:var(--ink)}
+h1{font:700 clamp(34px,5.5vw,54px)/1.03 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:48px 0 16px;max-width:780px}
+h2{font:700 clamp(24px,3vw,30px)/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:64px 0 14px}
+h3{font:600 18px/1.3 Geist,sans-serif;margin:0 0 6px}
+p,li{color:var(--ink-2)}p+p{margin-top:12px}a{color:var(--ink)}b{color:var(--ink);font-weight:600}
+.lede{font-size:19px;max-width:680px}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;padding:16px 24px;border-radius:10px}.btn:hover{background:var(--orange-d)}
+.link{margin-left:16px;font-weight:500}.ctas{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.step{border:1px solid var(--line);border-radius:14px;padding:20px}.step em{font:700 13px Geist,sans-serif;font-style:normal;color:var(--orange-d);display:block;margin-bottom:8px}
+.cmp{width:100%;border-collapse:collapse;margin-top:16px;font-size:15px}.cmp th,.cmp td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp th{font-weight:600;color:var(--ink)}.cmp td{color:var(--ink-2)}.cmp td:first-child{color:var(--ink);font-weight:500}
+.scroll{overflow-x:auto}.cmp{min-width:600px}.cmp td:last-child,.cmp th:last-child{background:#FFF8F4;color:var(--ink)}
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.pc{border:1px solid var(--line);border-radius:14px;padding:20px}.pc.hi{border-color:var(--orange);background:#FFF8F4}.pc strong{font:700 28px/1.1 "Bricolage Grotesque",sans-serif;display:block;margin:6px 0}
+.faq h3{margin-top:22px}
+.cta{background:var(--navy);border-radius:18px;padding:32px;margin-top:64px}.cta h2{color:#fff;margin:0 0 10px}.cta p{color:#C9D3E0}
+ul{padding-left:20px;display:grid;gap:6px}
+footer{border-top:1px solid var(--line);margin-top:72px;padding:28px 0 48px;font-size:14px;color:#8A94A3}
+@media (max-width:560px){.link{margin-left:0;width:100%}.cta{padding:24px}}</style></head>
+<body><div class="wrap"><div class="top"><a class="logo" href="/"><i></i>Laneworks</a><a class="back" href="/solutions/">All solutions</a></div>
+
+<h1>22 messy quote requests. Every price checked by hand.</h1>
+<p class="lede">Accuracy claims are easy to make and hard to check. So here is the test: 22 quote requests of the kind a forwarding desk actually gets, run through the live Laneworks engine against a rate sheet you can download, with every total recalculated by hand. 22 of 22 handled correctly: 14 priced exactly, 6 flagged for a rate or answered with questions instead of a guess, 2 correctly left alone.</p>
+<div class="ctas"><a class="btn" href="mailto:try@getlaneworks.com?subject=Fwd%3A%20quote%20request">Forward one real quote request</a><a class="link" href="/sample.html">See a sample draft</a></div>
+<p style="font-size:14px;color:#8A94A3;margin-top:12px">Free trial: forward a request to try@getlaneworks.com and the draft comes back in about two minutes. No sign-up, no call.</p>
+
+<h2>The results</h2>
+<p>Run on 8 November 2026 on the production engine. Rates: the sample sheet below (FCL, LCL, air, local charges, door delivery by postcode). Each request is a plain email, written the way customers write: codes, typos, reply chains, signatures, attachments.</p>
+<style>.bt td,.bt th{padding:7px 10px;vertical-align:top;border-bottom:1px solid #eee;text-align:left}</style>
+<div style="overflow-x:auto"><table class="bt" style="border-collapse:collapse;font-size:14px;min-width:680px">
+<tr style="border-bottom:1px solid #ddd"><th>Case</th><th>The request</th><th>What Laneworks did</th><th>Total (AUD)</th><th>Hand check</th></tr>
+<tr><td>S01</td><td>UN/LOCODEs only (CNSHA to AUMEL), 2x40HC FOB</td><td>Priced</td><td style='white-space:nowrap;text-align:right'>7,360.00</td><td>2 x (2,900 freight + 780 destination)</td></tr>
+<tr><td>S02</td><td>EXW factory pickup in Shunde, door delivery Dandenong South, clearance</td><td>Flagged: no Foshan to Melbourne rate; local charges priced, customer asked for ready date and pickup address</td><td style='white-space:nowrap;text-align:right'>&ndash;</td><td>Lane not on sheet, so no total is sent</td></tr>
+<tr><td>S03</td><td>Air, 2 pallets 120x100x110 cm, 350 kg, HKG to SYD, FCA</td><td>Priced on 441 kg volumetric (2.64 cbm x 167)</td><td style='white-space:nowrap;text-align:right'>2,944.20</td><td>441 x 6.20 + 210 destination</td></tr>
+<tr><td>S04</td><td>LCL 5.2 cbm / 1,800 kg Shanghai to Brisbane</td><td>Priced on 5.2 W/M</td><td style='white-space:nowrap;text-align:right'>996.00</td><td>5.2 x 85 + 320 CFS + 5.2 x 45 handling</td></tr>
+<tr><td>S05</td><td>40&#x27; reefer, frozen seafood -18C</td><td>Flagged: sheet has no 40RF rate</td><td style='white-space:nowrap;text-align:right'>&ndash;</td><td>Never quoted as dry</td></tr>
+<tr><td>S06</td><td>Paint, UN1263 Class 3, 20GP</td><td>Flagged: no DG surcharge on the sheet; carrier-approved rate needed</td><td style='white-space:nowrap;text-align:right'>&ndash;</td><td>Never quoted as general cargo</td></tr>
+<tr><td>S07</td><td>New request inside an old quote thread (1x40HC Xiamen)</td><td>Priced the new request only</td><td style='white-space:nowrap;text-align:right'>3,680.00</td><td>2,900 + 780</td></tr>
+<tr><td>S08</td><td>&#x27;1*40HQ from shenzhen port go to fremantle&#x27;</td><td>Priced as 1 x 40HC Shenzhen to Fremantle</td><td style='white-space:nowrap;text-align:right'>3,680.00</td><td>2,900 + 780</td></tr>
+<tr><td>S09</td><td>20GP + 40HC from Ningbo, Shanghai and Qingdao to Sydney</td><td>3 lanes priced; commodity, volume, delivery and dates asked once</td><td style='white-space:nowrap;text-align:right'>6,310.00 each</td><td>1,850 + 2,900 + 2 x 780</td></tr>
+<tr><td>S10</td><td>&#x27;How much to ship a container from China?&#x27;</td><td>Asked for origin port, destination, container size, cargo, Incoterm and clearance</td><td style='white-space:nowrap;text-align:right'>&ndash;</td><td>No price sent</td></tr>
+<tr><td>S11</td><td>Los Angeles to Melbourne, 40HC</td><td>Flagged: no LA to Melbourne rate</td><td style='white-space:nowrap;text-align:right'>&ndash;</td><td>Never estimated</td></tr>
+<tr><td>S12</td><td>Wine export Melbourne to Auckland, door to door</td><td>Flagged: no Melbourne to Auckland rate</td><td style='white-space:nowrap;text-align:right'>&ndash;</td><td>Never estimated</td></tr>
+<tr><td>S13</td><td>1x20&#x27; and 1x40&#x27; Shanghai to Melbourne</td><td>Priced 1 x 20GP + 1 x 40GP</td><td style='white-space:nowrap;text-align:right'>6,310.00</td><td>1,850 + 2,900 + 2 x 780</td></tr>
+<tr><td>S14</td><td>Arriving CIF Port Botany, clearance + delivery to Alexandria 2015</td><td>Priced destination, clearance and delivery</td><td style='white-space:nowrap;text-align:right'>1,380.00</td><td>780 + 420 delivery + 180 clearance</td></tr>
+<tr><td>S15</td><td>LCL 12 tons / 8 m3 Qingdao to Melbourne</td><td>Priced on 12 W/M</td><td style='white-space:nowrap;text-align:right'>1,880.00</td><td>12 x 85 + 320 + 12 x 45</td></tr>
+<tr><td>S16</td><td>Signature lists 4 offices and a Brisbane warehouse address</td><td>Priced Ningbo to Sydney, no stray delivery added</td><td style='white-space:nowrap;text-align:right'>3,680.00</td><td>2,900 + 780</td></tr>
+<tr><td>S17</td><td>Website form notification, real customer in the body</td><td>Priced and addressed to the customer</td><td style='white-space:nowrap;text-align:right'>3,680.00</td><td>2,900 + 780</td></tr>
+<tr><td>S18</td><td>&#x27;Any update on my quote?&#x27;</td><td>Marked &#x27;not a quote request&#x27; for the team</td><td style='white-space:nowrap;text-align:right'>&ndash;</td><td>No quote drafted</td></tr>
+<tr><td>S19</td><td>Freight newsletter</td><td>Marked &#x27;not a quote request&#x27;</td><td style='white-space:nowrap;text-align:right'>&ndash;</td><td>No quote drafted</td></tr>
+<tr><td>S20</td><td>CIF Sydney, destination charges + delivery Wetherill Park 2164</td><td>Priced destination, clearance and delivery</td><td style='white-space:nowrap;text-align:right'>1,520.00</td><td>780 + 560 delivery + 180 clearance</td></tr>
+<tr><td>S21</td><td>RFQ in an attached spreadsheet, 3 lanes</td><td>3 lanes priced</td><td style='white-space:nowrap;text-align:right'>7,360.00 / 2,630.00 / 3,680.00</td><td>2x(2,900+780) / 1,850+780 / 2,900+780</td></tr>
+<tr><td>S22</td><td>Booking request PDF: 1x40HC, 68 cbm, delivery Truganina 3029, clearance</td><td>Priced with delivery and clearance</td><td style='white-space:nowrap;text-align:right'>4,420.00</td><td>2,900 + 780 + 560 + 180</td></tr>
+</table></div>
+<p><a class="btn" href="/downloads/laneworks-quote-benchmark.xlsx">Download the test set and results (.xlsx)</a> <a class="link" href="/downloads/sample-rate-sheet.xlsx" style="margin-left:14px">The rate sheet</a></p>
+<h2>What it shows</h2>
+<ul>
+<li><b>Prices come from the sheet, not the model.</b> The AI reads the email; fixed rules set every number, so every total above can be rebuilt from the rate sheet with a calculator.</li>
+<li><b>Gaps are flagged, never filled.</b> A reefer, dangerous goods, or a lane the sheet doesn't cover gets a note to your team, not an invented rate.</li>
+<li><b>The freight details are read properly.</b> Air chargeable weight, LCL weight-or-measure, 20' vs 40', destination-only quotes on CIF arrivals, door delivery by postcode, clearance when asked.</li>
+<li><b>Noise is ignored.</b> Old quotes in a reply chain, addresses in a signature, newsletters and status chasers don't turn into quotes.</li>
+</ul>
+<h2>Run it on your own requests</h2>
+<p>A benchmark on sample rates only goes so far. Send 20 of your own recent quote requests and the rate sheet your team used, and we'll run the same test and send back the scored workbook: what Laneworks would have quoted, what it would have flagged, and where it differs from what went out. Free, within one working day: <b>rehan@getlaneworks.com</b>.</p>
+<p>Your requests and rates are used only for that test, never to train AI models, and are deleted after 30 days. <a href="/security.html">Security and data</a></p>
+<h2>How each price is set</h2>
+<p>Port pair and container size from the FCL sheet; W/M (the greater of cbm and tonnes) for LCL; chargeable weight (actual or volumetric at the sheet's factor) for air; local charges by side and Incoterm; door delivery by postcode band; clearance when the customer asks. <a href="/how-pricing-works.html">How a Laneworks price is set</a> · <a href="/solutions/freight-quote-margin-check.html">Free margin check</a> · <a href="/solutions/freight-tender-pricing.html">Tender pricing</a></p>
+
+<h2>Questions</h2>
+<div class="faq">
+<h3>Were these requests written to make Laneworks look good?</h3><p>They were written to cover what goes wrong on a real desk: codes, typos, reply chains, attachments, cargo the sheet can't price. Download the set and judge for yourself, or send your own requests and we'll run those instead.</p>
+<h3>Why are some results counted as correct without a price?</h3><p>Because the right answer was not to price. A reefer or dangerous-goods request priced off a dry general-cargo sheet would be a wrong quote; flagging it for a real rate is the correct outcome.</p>
+<h3>Does the AI ever set a price?</h3><p>No. The AI reads the email and pulls out the shipment details. Every amount comes from the rate sheet by fixed rules, and each line on the draft names the sheet row it came from.</p>
+<h3>Can we run this test on our own rates?</h3><p>Yes, free. Send 20 recent requests and the rate sheet your team used to rehan@getlaneworks.com and you get the scored workbook back within one working day.</p>
+</div>
+
+<div class="cta"><h2>Try it on one of today's requests</h2>
+<p>Forward a real quote request to <b style="color:#fff">try@getlaneworks.com</b>. The priced draft comes back in about two minutes.</p>
+<p style="margin-top:18px"><a class="btn" href="mailto:try@getlaneworks.com?subject=Fwd%3A%20quote%20request">Forward a quote request</a></p></div>
+
+<p style="margin-top:32px;font-size:15px">Related: <a href="/freight-quoting-software.html">Freight quoting software</a> · <a href="/best-freight-quoting-software.html">Best freight quoting software 2026</a> · <a href="/freight-quote-faq.html">Freight quote FAQ</a> · <a href="/freight-calculator.html">Freight calculator</a></p>
+<footer>© 2026 Laneworks · <a href="/privacy.html">Privacy</a> · <a href="/security.html">Security</a> · <a href="/solutions/">Solutions</a> · <a href="/freight-calculator.html">Freight calculator</a> · <a href="/blog/">Articles</a></footer></div></body></html>
