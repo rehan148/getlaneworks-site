@@ -1,6 +1,6 @@
 # Laneworks
 
-> Laneworks is freight quoting software for freight forwarders. It reads customer quote-request emails (and their spreadsheet or PDF attachments), prices every line from the forwarder's own rate sheet by fixed rules, and drafts the reply with a PDF quotation in about two minutes. Anything the rate sheet does not cover (a lane, reefer, dangerous goods) is flagged for the team, never guessed. It works alongside CargoWise, Magaya and spreadsheets, from the forwarder's existing mailbox. Based in Melbourne, Australia (Tessaro Pty Ltd); available to forwarders in Australia, New Zealand, the UK, the US and Canada.
+> Laneworks is freight quoting software for freight forwarders. It reads customer quote-request emails (and their spreadsheet or PDF attachments), prices every line from the forwarder's own rate sheet by fixed rules, and drafts the reply with a PDF quotation in about two minutes. Anything the rate sheet does not cover (a lane, reefer, dangerous goods) is flagged for the team, never guessed. It works alongside CargoWise, Magaya and spreadsheets, from the forwarder's existing mailbox. Available to forwarders in Australia, New Zealand, the UK, the US and Canada.
 
 Key facts:
 - What it does: email quote requests → priced draft reply + PDF quotation in about 2 minutes; optional auto-send for fully priced, unflagged quotes; website quote forms; tender pricing (shipper's workbook returned priced); margin check of past quotes against the forwarder's rates.
