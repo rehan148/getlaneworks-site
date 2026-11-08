@@ -35,6 +35,7 @@ Key facts:
 - [Logixboard Helm alternative](https://getlaneworks.com/solutions/logixboard-helm-alternative.html)
 - [CargoWise quoting add-on](https://getlaneworks.com/solutions/cargowise-quoting-add-on.html)
 - [Magaya quoting add-on](https://getlaneworks.com/solutions/magaya-quoting-add-on.html)
+- [Customer-specific freight pricing](https://getlaneworks.com/solutions/customer-specific-freight-pricing.html): markups by customer email or domain, validity, exclusions and sign-off set once in the rate sheet
 - [ChatGPT for freight forwarders](https://getlaneworks.com/solutions/chatgpt-for-freight-forwarders.html)
 - [Microsoft Copilot for freight forwarders](https://getlaneworks.com/solutions/microsoft-copilot-for-freight-forwarders.html)
 - [All solutions](https://getlaneworks.com/solutions/)
