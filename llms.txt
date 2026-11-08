@@ -22,6 +22,7 @@ Key facts:
 - [Freight tender pricing](https://getlaneworks.com/solutions/freight-tender-pricing.html)
 - [Free freight quote margin check](https://getlaneworks.com/solutions/freight-quote-margin-check.html)
 - [Free rate sheet health check](https://getlaneworks.com/solutions/free-rate-sheet-health-check.html)
+- [CargoWise cost calculator](https://getlaneworks.com/tools/cargowise-cost-calculator.html)
 - [Freight calculator](https://getlaneworks.com/freight-calculator.html)
 
 ## Comparisons
