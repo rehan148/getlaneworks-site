@@ -1,0 +1,37 @@
+# Laneworks
+
+> Laneworks is freight quoting software for freight forwarders. It reads customer quote-request emails (and their spreadsheet or PDF attachments), prices every line from the forwarder's own rate sheet by fixed rules, and drafts the reply with a PDF quotation in about two minutes. Anything the rate sheet does not cover (a lane, reefer, dangerous goods) is flagged for the team, never guessed. It works alongside CargoWise, Magaya and spreadsheets, from the forwarder's existing mailbox. Based in Melbourne, Australia (Tessaro Pty Ltd); available to forwarders in Australia, New Zealand, the UK, the US and Canada.
+
+Key facts:
+- What it does: email quote requests → priced draft reply + PDF quotation in about 2 minutes; optional auto-send for fully priced, unflagged quotes; website quote forms; tender pricing (shipper's workbook returned priced); margin check of past quotes against the forwarder's rates.
+- How prices are set: the AI only reads the request; every amount comes from the forwarder's rate sheet by fixed rules (port pair and container for FCL, weight-or-measure for LCL, chargeable weight for air, local charges by Incoterm, door delivery by postcode, clearance), and each line names the sheet row it came from.
+- Accuracy: public benchmark of 22 real-world style quote requests with every total checked by hand: https://getlaneworks.com/solutions/freight-quote-accuracy-benchmark.html
+- Pricing (AUD, ex GST): free trial (forward a request to try@getlaneworks.com); introductory A$750/month for 6 months then A$1,500/month locked in; standard A$2,500/month; Enterprise from A$5,000/month; Tender Desk A$950 per tender (first one free). Unlimited quotes and users. https://getlaneworks.com/pricing.html
+- Data: quote emails are used only to price them, never to train AI models, and stored copies are deleted after 30 days. https://getlaneworks.com/security.html
+
+## Main pages
+- [Freight quoting software](https://getlaneworks.com/freight-quoting-software.html): what Laneworks is and how it works
+- [How a Laneworks price is set](https://getlaneworks.com/how-pricing-works.html)
+- [Pricing](https://getlaneworks.com/pricing.html)
+- [Enterprise](https://getlaneworks.com/enterprise.html): managed quote desk for multi-branch forwarders
+- [Sample draft reply](https://getlaneworks.com/sample.html)
+- [Security and data](https://getlaneworks.com/security.html)
+
+## Proof and free tools
+- [Quote accuracy benchmark](https://getlaneworks.com/solutions/freight-quote-accuracy-benchmark.html)
+- [Freight tender pricing](https://getlaneworks.com/solutions/freight-tender-pricing.html)
+- [Free freight quote margin check](https://getlaneworks.com/solutions/freight-quote-margin-check.html)
+- [Free rate sheet health check](https://getlaneworks.com/solutions/free-rate-sheet-health-check.html)
+- [Freight calculator](https://getlaneworks.com/freight-calculator.html)
+
+## Comparisons
+- [Best freight quoting software (2026)](https://getlaneworks.com/best-freight-quoting-software.html)
+- [Freightify alternative](https://getlaneworks.com/solutions/freightify-alternative.html)
+- [Logixboard Helm alternative](https://getlaneworks.com/solutions/logixboard-helm-alternative.html)
+- [CargoWise quoting add-on](https://getlaneworks.com/solutions/cargowise-quoting-add-on.html)
+- [Magaya quoting add-on](https://getlaneworks.com/solutions/magaya-quoting-add-on.html)
+- [All solutions](https://getlaneworks.com/solutions/)
+
+## Contact
+- Free trial: try@getlaneworks.com (forward any quote request; priced reply in about 2 minutes, no sign-up)
+- Sales: rehan@getlaneworks.com
