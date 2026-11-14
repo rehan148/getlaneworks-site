@@ -33,6 +33,7 @@ Key facts:
 - [Freight forwarding automation guide](https://getlaneworks.com/freight-forwarding-automation.html): every back-office task a forwarder can automate, and why quoting comes first
 - [Road freight quote software](https://getlaneworks.com/solutions/road-freight-quote-software.html): pallets, per-kg cubic, full truck and container cartage from your rate card
 - [Nexcade alternative](https://getlaneworks.com/solutions/nexcade-alternative.html)
+- [Freight forwarder workflow automation, step by step](https://getlaneworks.com/solutions/freight-forwarder-workflow-automation.html)
 - [Wove alternative](https://getlaneworks.com/solutions/wove-alternative.html)
 - [Freightify alternative](https://getlaneworks.com/solutions/freightify-alternative.html)
 - [Expedock alternative](https://getlaneworks.com/solutions/expedock-alternative.html)
