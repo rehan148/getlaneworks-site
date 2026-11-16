@@ -25,6 +25,7 @@ Key facts:
 - [Free rate sheet health check](https://getlaneworks.com/solutions/free-rate-sheet-health-check.html)
 - [Freight quote automation ROI calculator](https://getlaneworks.com/tools/quote-desk-roi-calculator.html): hours and money saved by automating routine quote replies, with every assumption editable
 - [CargoWise cost calculator](https://getlaneworks.com/tools/cargowise-cost-calculator.html)
+- [Tradie quote calculator](https://getlaneworks.com/tools/tradie-quote-calculator.html): free online and Excel job quote calculator for trades (hourly rate, call-out, minimum charge, materials markup, after-hours, GST)
 - [Removalist quote calculator](https://getlaneworks.com/tools/removalist-quote-calculator.html): free online and Excel calculator for pricing local moves (crew, minimum hours, stairs, surcharges, GST)
 - [Quote Kit](https://getlaneworks.com/quote-kit.html): a done-for-you quote calculator built from a business's own price list, from A$1,500 one-off
 - [Freight calculator](https://getlaneworks.com/freight-calculator.html)
