@@ -49,3 +49,4 @@ Key facts:
 ## Contact
 - Free trial: try@quotes.getlaneworks.com (forward any quote request; priced reply in about 2 minutes, no sign-up)
 - Sales: rehan@getlaneworks.com
+- [How to automate freight quoting yourself](https://getlaneworks.com/guides/automate-freight-quoting-yourself.html): 8-step guide with a free Excel quote calculator.
