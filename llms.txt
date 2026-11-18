@@ -38,6 +38,8 @@ Key facts:
 - [Road freight quote software](https://getlaneworks.com/solutions/road-freight-quote-software.html): pallets, per-kg cubic, full truck and container cartage from your rate card
 - [Nexcade alternative](https://getlaneworks.com/solutions/nexcade-alternative.html)
 - [Raft alternative](https://getlaneworks.com/solutions/raft-alternative.html)
+- [cargo.one alternative](https://getlaneworks.com/solutions/cargo-one-alternative.html): quotes priced only from your own rate sheet, compared with cargo.one's rate-and-booking platform
+- [AI agents for freight forwarders](https://getlaneworks.com/solutions/ai-quoting-agent-freight-forwarders.html): what each back-office agent does, and what Laneworks covers today
 - [Freight forwarder workflow automation, step by step](https://getlaneworks.com/solutions/freight-forwarder-workflow-automation.html)
 - [Wove alternative](https://getlaneworks.com/solutions/wove-alternative.html)
 - [Freightify alternative](https://getlaneworks.com/solutions/freightify-alternative.html)
