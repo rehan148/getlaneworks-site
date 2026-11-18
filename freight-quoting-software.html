@@ -47,6 +47,15 @@ p,li{color:var(--ink-2)}p+p{margin-top:12px}a{color:var(--ink)}b{color:var(--ink
 .faq h3{margin-top:22px}
 .cta{background:var(--navy);border-radius:18px;padding:32px;margin-top:64px}.cta h2{color:#fff;margin:0 0 10px}.cta p{color:#C9D3E0}
 ul{padding-left:20px;display:grid;gap:6px}
+.status{list-style:none;padding:0;margin-top:18px;display:grid;gap:0;border-top:1px solid var(--line)}
+.status li{display:grid;grid-template-columns:92px 1fr;gap:16px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
+.status li b{display:block}
+.pill{display:inline-block;font:600 12px/1 Geist,sans-serif;letter-spacing:.06em;padding:6px 0;width:80px;text-align:center;border-radius:999px;margin-top:2px}
+.pill.live{background:#E7F6EE;color:#05603A}.pill.built{background:#E8EEFC;color:#1D4ED8}.pill.planned{background:#F2F4F7;color:#475467}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:14px;font-size:15px;color:var(--ink-2)}
+.legend span{display:flex;align-items:center;gap:8px}
+@media (max-width:560px){.status li{grid-template-columns:1fr;gap:6px}}
+
 footer{border-top:1px solid var(--line);margin-top:72px;padding:28px 0 48px;font-size:14px;color:#8A94A3}
 @media (max-width:560px){.link{margin-left:0;width:100%}.cta{padding:24px}}</style><!-- icons:start --><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#0B1A2E"><!-- icons:end --><!-- ga:start --><script async src="https://www.googletagmanager.com/gtag/js?id=G-QJXR1QVTGP"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QJXR1QVTGP',{client_storage:'none',anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});</script><!-- ga:end --></head>
 <body><div class="wrap"><div class="top"><a class="logo" href="/"><i></i>Laneworks</a><a class="back" href="/">Home</a></div>
@@ -72,6 +81,27 @@ footer{border-top:1px solid var(--line);margin-top:72px;padding:28px 0 48px;font
 <li><b>Auto-reply only when it's safe.</b> Missing rate, guessed detail or a big quote? It comes to you as a draft instead.</li>
 <li><b>Air, FCL and LCL.</b> Including chargeable weight and W/M. Try the free <a href="/freight-calculator.html">freight calculator</a>.</li>
 </ul>
+
+<h2>Everything it does, and where each part stands</h2>
+<p>No roadmap dressed up as product. Each part is labelled for what it is today.</p>
+<div class="legend"><span><span class="pill live">LIVE</span>Running on the live system now</span><span><span class="pill built">BUILT</span>Finished, not yet used with a customer</span><span><span class="pill planned">PLANNED</span>Not available yet</span></div>
+<ul class="status">
+<li><span class="pill live">LIVE</span><div><b>Reads quote requests by email</b>Including PDF, Excel, CSV and Word attachments, scanned PDFs and photos. Anything it can't read is flagged for your team.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Prices from your rate sheet by fixed rules</b>FCL, LCL, air and road, origin and destination charges by Incoterm, door delivery by postcode zone and customs clearance. The AI reads the request; it never sets a price.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Reply and PDF quotation in your name</b>Your company name, your sign-off, every charge listed.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Automatic replies, if you switch them on</b>A fully priced quote goes to your customer without anyone touching it. Anything flagged comes to your team as a draft.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Rate updates by email</b>Forward a carrier's rate notice or a new sheet. One email lists every change. Reply &ldquo;undo&rdquo; to roll it back.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Rate requests to your partners and agents</b>A lane, charge or rate that isn't on your sheet is flagged, and the rate request for that leg is written for you. If a partner is slow to answer, your team gets a reminder with the chase ready to send.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Follow-up reminders</b>A daily list of quotes your customers haven't answered, each with the follow-up already written and Won / Lost buttons.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Desk, your team's queue</b>Every request, who owns it, and a clock against your reply target.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Phone quote pad</b>Type the caller's details as you talk. The quote builds as you type and shows what to ask next.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Manual extras on a quote</b>Add a charge that isn't on your sheet, such as waiting time or an extra drop, as its own line.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Tender pricing</b>Email a shipper's tender workbook and get the same file back with every lane priced from your rates, and the rate requests for any lane your rates don't cover.</div></li>
+<li><span class="pill live">LIVE</span><div><b>Weekly report</b>Requests handled, how many were fully priced, time to draft, hours saved and jobs won.</div></li>
+<li><span class="pill built">BUILT</span><div><b>CargoWise export</b>A priced quote saved as a CargoWise quote file. Built and tested by us; not yet tested in a customer&rsquo;s CargoWise. Today Laneworks runs alongside CargoWise by email.</div></li>
+<li><span class="pill planned">PLANNED</span><div><b>Quotes by text and phone call</b>Requests that arrive as a text or a call to your Laneworks number, quoted the same way. Not available yet.</div></li>
+</ul>
+<p style="font-size:14px;color:#8A94A3;margin-top:10px">Last checked against the live system on 18 Nov 2026.</p>
 
 <h2>How it compares with the usual options</h2>
 <div class="scroll"><table class="cmp">
