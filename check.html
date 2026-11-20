@@ -90,6 +90,12 @@ const Q=[
  {k:"pain",q:"What would help your desk most in the next 90 days?",o:[["Faster replies, so we win more of the jobs we quote",1],["Stop margin leaking: missed charges and below-cost quotes",2],["Free up my team without hiring",3],["All of the above",4]]}
 ];
 let i=0,A={};
+const LEAD="https://desk.getlaneworks.com/lead";
+const SID=(()=>{try{let v=sessionStorage.getItem('lw_sid');if(!v){v=(crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2)+Date.now()).replace(/[^A-Za-z0-9-]/g,'');sessionStorage.setItem('lw_sid',v)}return v}catch(e){return 'v'+Date.now()+String(Math.random()).slice(2,10)}})();
+const UTM=(()=>{const o={};new URLSearchParams(location.search).forEach((v,k)=>{if(/^utm_|^ref$|^src$/.test(k))o[k]=v});return o})();
+function ans(){const o={};Q.forEach(q=>{if(A[q.k])o[q.k]=A[q.k][0]});return o}
+function send(stage,extra){try{fetch(LEAD,{method:"POST",mode:"cors",keepalive:true,headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.assign({sid:SID,stage,page:location.pathname,referrer:document.referrer,utm:UTM,answers:ans()},extra||{}))}).catch(()=>{})}catch(e){}}
+send("start");
 const quiz=document.getElementById('quiz');
 function render(){
  const s=Q[i];
@@ -98,7 +104,7 @@ function render(){
  s.o.forEach((o,n)=>{h+=`<button class="opt${A[s.k]&&A[s.k][1]===o[1]?' sel':''}" data-n="${n}">${o[0]}</button>`});
  h+='</div><div class="nav">'+(i?'<button class="ghost" id="back">← Back</button>':'<span></span>')+'</div>';
  quiz.innerHTML=h;
- quiz.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{A[s.k]=s.o[+b.dataset.n];i++; i<Q.length?render():contact()});
+ quiz.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{A[s.k]=s.o[+b.dataset.n];send("answer",{step:i+1});i++; i<Q.length?render():contact()});
  const bk=document.getElementById('back'); if(bk) bk.onclick=()=>{i--;render()};
 }
 function contact(){
@@ -108,12 +114,12 @@ function contact(){
  <label class="f" for="em">Work email</label><input type="email" id="em" autocomplete="email">
  <div class="err" id="er">Please add your name, company and a work email.</div>
  <div class="nav"><button class="ghost" id="back">← Back</button><button class="btn" id="go">Show my results →</button></div>
- <p class="small">No spam. See our <a href="/privacy.html">privacy policy</a>.</p>`;
+ <p class="small">Your answers are saved so we can prepare. No spam. See our <a href="/privacy.html">privacy policy</a>.</p>`;
  document.getElementById('back').onclick=()=>{i=Q.length-1;render()};
  document.getElementById('go').onclick=()=>{
   const nm=document.getElementById('nm').value.trim(),co=document.getElementById('co').value.trim(),em=document.getElementById('em').value.trim();
   if(!nm||!co||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){document.getElementById('er').style.display='block';return}
-  A.name=nm;A.company=co;A.email=em; result();
+  A.name=nm;A.company=co;A.email=em; send("contact",{contact:{name:nm,company:co,email:em}}); result();
  };
 }
 function result(){
@@ -143,6 +149,7 @@ function result(){
  } else {
   h+=`<div class="cta"><h3>Laneworks is built for forwarders and customs brokers.</h3><p class="hint">If you ship goods yourself, these free tools will help: the <a href="/freight-calculator.html">freight calculator</a>, the <a href="/tools/demurrage-detention-calculator.html">demurrage and detention calculator</a>, and <a href="/surcharge-watch.html">Surcharge Watch</a> for carrier charge changes.</p></div>`;
  }
+ send("result",{contact:{name:A.name,company:A.company,email:A.email},result:{score:sc,fit,hours:hrs,label}});
  document.getElementById('intro').hidden=true;
  const r=document.getElementById('result'); r.hidden=false;
  document.getElementById('resultCard').innerHTML=h; window.scrollTo(0,0);
