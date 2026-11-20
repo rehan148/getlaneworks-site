@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quote Desk Check: how much time and margin is your quoting costing you? | Laneworks</title>
+<meta name="description" content="Nine quick questions for freight forwarders and customs brokers. See how many hours a month go into quoting, where margin leaks, and whether Laneworks fits your desk.">
+<link rel="canonical" href="https://getlaneworks.com/check.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Quote Desk Check for freight forwarders | Laneworks">
+<meta property="og:description" content="Nine quick questions. See the hours your quoting takes and where margin leaks.">
+<meta property="og:url" content="https://getlaneworks.com/check.html">
+<meta property="og:image" content="https://getlaneworks.com/laneworks-demo-poster.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1A2E;--navy-2:#13263F;--ink:#0B1A2E;--ink-2:#475467;--muted:#8A94A3;--line:#E8EBF0;--orange:#FF5B1F;--orange-d:#E84A10;--blue:#1D4ED8;--tint:#E8EEFC;--green:#079455;--green-tint:#E7F6EE;--red:#D92D20;
+--head:"Bricolage Grotesque","Geist",sans-serif;--sans:"Geist",-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#F6F8FB;color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header{background:var(--navy);color:#fff}
+header .in{max-width:760px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+header a.logo{font:800 20px var(--head);text-decoration:none;color:#fff}
+header span{font-size:14px;color:#C9D4E2}
+main{max-width:760px;margin:0 auto;padding:28px 20px 60px}
+h1{font:800 clamp(28px,5vw,40px)/1.15 var(--head);letter-spacing:-.01em}
+.lead{color:var(--ink-2);margin:12px 0 20px;font-size:18px}
+.ticks{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--ink-2);font-size:15px;margin-bottom:22px}
+.ticks b{color:var(--green)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 2px 10px rgba(11,26,46,.05)}
+.bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin-bottom:8px}
+.bar i{display:block;height:100%;width:0;background:var(--orange);transition:width .25s}
+.step{font-size:13px;color:var(--muted);margin-bottom:16px;letter-spacing:.02em}
+.q{font:700 22px/1.3 var(--head);margin-bottom:6px}
+.hint{color:var(--ink-2);font-size:15px;margin-bottom:16px}
+.opts{display:grid;gap:10px}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:14px 16px;font:500 16px var(--sans);color:var(--ink);cursor:pointer}
+.opt:hover{border-color:var(--blue)}
+.opt.sel{border-color:var(--blue);background:var(--tint)}
+.nav{display:flex;justify-content:space-between;margin-top:18px}
+.btn{display:inline-block;background:var(--orange);color:#fff;border:0;border-radius:10px;padding:14px 22px;font:600 16px var(--sans);cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--orange-d)}
+.ghost{background:none;border:0;color:var(--ink-2);font:500 15px var(--sans);cursor:pointer;padding:10px 0}
+label.f{display:block;font-weight:600;font-size:15px;margin:14px 0 6px}
+input[type=text],input[type=email],input[type=tel]{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;font:400 16px var(--sans)}
+input:focus{outline:2px solid var(--blue);border-color:var(--blue)}
+.small{font-size:13px;color:var(--muted);margin-top:10px}
+.score{display:flex;gap:18px;align-items:center;margin:6px 0 18px}
+.dial{width:110px;height:110px;border-radius:50%;display:grid;place-items:center;font:800 34px var(--head);color:#fff;flex:none}
+.tag{font:700 13px var(--sans);letter-spacing:.06em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+.stat{background:#F6F8FB;border-radius:12px;padding:14px}
+.stat b{display:block;font:800 26px var(--head)}
+.stat span{font-size:14px;color:var(--ink-2)}
+ul.find{margin:8px 0 0 20px;color:var(--ink-2)}
+ul.find li{margin:6px 0}
+.cta{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.cta h3{font:700 21px var(--head);margin-bottom:6px}
+.err{color:var(--red);font-size:14px;margin-top:8px;display:none}
+@media(max-width:480px){header span{display:none}}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:20px}
+</style>
+</head>
+<body>
+<header><div class="in"><a class="logo" href="/">Laneworks</a><span>The back office for freight forwarders</span></div></header>
+<main>
+<section id="intro">
+  <h1>Quote Desk Check: what is quoting really costing your desk?</h1>
+  <p class="lead">Nine quick questions for freight forwarders and customs brokers. You'll see how many hours a month go into quotes, where margin is most likely leaking, and whether Laneworks fits your desk.</p>
+  <div class="ticks"><span><b>✓</b> About 90 seconds</span><span><b>✓</b> Results on screen straight away</span><span><b>✓</b> No obligation</span></div>
+  <div class="card"><div id="quiz"></div></div>
+</section>
+<section id="result" hidden><div class="card" id="resultCard"></div></section>
+</main>
+<footer>© 2026 Laneworks · <a href="/privacy.html">Privacy</a> · <a href="/security.html">Data &amp; security</a></footer>
+<script>
+const CAL="https://calendly.com/rehan-getlaneworks/live-quote-run";
+const Q=[
+ {k:"type",q:"What best describes your business?",o:[["Freight forwarder","fwd"],["Customs broker","cb"],["Both forwarding and customs","both"],["NVOCC or consolidator","nvo"],["Importer, exporter or online seller","ship"],["Something else","other"]]},
+ {k:"region",q:"Where is your main office?",o:[["Australia","AU"],["New Zealand","NZ"],["United Kingdom","UK"],["United States","US"],["Somewhere else","Other"]]},
+ {k:"vol",q:"Roughly how many quote requests reach your team each week?",h:"Count every customer request that needs a price: email, web form or phone.",o:[["Fewer than 10",5],["10 to 30",20],["30 to 75",50],["75 to 200",130],["More than 200",250]]},
+ {k:"mins",q:"How long does a typical door-to-door quote take to build?",o:[["Under 10 minutes",8],["10 to 20 minutes",15],["20 to 45 minutes",30],["45 minutes or more",50]]},
+ {k:"speed",q:"How quickly do customers usually get a priced reply?",o:[["Within an hour",1],["Same day",2],["Next day",3],["Longer than a day",4]]},
+ {k:"people",q:"How many people on your team prepare quotes?",o:[["Just me",1],["2 to 3",2],["4 to 10",6],["More than 10",12]]},
+ {k:"rates",q:"Where do your buy rates live today?",o:[["Excel or Google Sheets",1],["In our TMS (CargoWise, Magaya or similar)",2],["Spread across emails and PDFs from partners",3],["Mostly in people's heads",4]]},
+ {k:"leak",q:"When a carrier adds a surcharge or a rate expires, how do you catch it on your quotes?",o:[["A checked process: every quote is reviewed against current notices",1],["Someone usually remembers",2],["We often find out when the invoice arrives",3],["Honestly, we don't track it",4]]},
+ {k:"pain",q:"What would help your desk most in the next 90 days?",o:[["Faster replies, so we win more of the jobs we quote",1],["Stop margin leaking: missed charges and below-cost quotes",2],["Free up my team without hiring",3],["All of the above",4]]}
+];
+let i=0,A={};
+const quiz=document.getElementById('quiz');
+function render(){
+ const s=Q[i];
+ const pct=Math.round(i/Q.length*100);
+ let h=`<div class="bar"><i style="width:${pct}%"></i></div><div class="step">Question ${i+1} of ${Q.length}</div><div class="q">${s.q}</div>`+(s.h?`<div class="hint">${s.h}</div>`:'<div class="hint"></div>')+'<div class="opts">';
+ s.o.forEach((o,n)=>{h+=`<button class="opt${A[s.k]&&A[s.k][1]===o[1]?' sel':''}" data-n="${n}">${o[0]}</button>`});
+ h+='</div><div class="nav">'+(i?'<button class="ghost" id="back">← Back</button>':'<span></span>')+'</div>';
+ quiz.innerHTML=h;
+ quiz.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{A[s.k]=s.o[+b.dataset.n];i++; i<Q.length?render():contact()});
+ const bk=document.getElementById('back'); if(bk) bk.onclick=()=>{i--;render()};
+}
+function contact(){
+ quiz.innerHTML=`<div class="bar"><i style="width:100%"></i></div><div class="step">Last step</div><div class="q">Where should we prepare your results?</div><div class="hint">Your results show on the next screen. We use these details only to prepare for a call if you book one.</div>
+ <label class="f" for="nm">Your name</label><input type="text" id="nm" autocomplete="name">
+ <label class="f" for="co">Company</label><input type="text" id="co" autocomplete="organization">
+ <label class="f" for="em">Work email</label><input type="email" id="em" autocomplete="email">
+ <div class="err" id="er">Please add your name, company and a work email.</div>
+ <div class="nav"><button class="ghost" id="back">← Back</button><button class="btn" id="go">Show my results →</button></div>
+ <p class="small">No spam. See our <a href="/privacy.html">privacy policy</a>.</p>`;
+ document.getElementById('back').onclick=()=>{i=Q.length-1;render()};
+ document.getElementById('go').onclick=()=>{
+  const nm=document.getElementById('nm').value.trim(),co=document.getElementById('co').value.trim(),em=document.getElementById('em').value.trim();
+  if(!nm||!co||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){document.getElementById('er').style.display='block';return}
+  A.name=nm;A.company=co;A.email=em; result();
+ };
+}
+function result(){
+ const vol=A.vol[1],mins=A.mins[1];
+ const hrs=Math.round(vol*mins*52/12/60);           // hours a month spent building quotes
+ const fwd=["fwd","cb","both","nvo"].includes(A.type[1]);
+ // score out of 100: higher = more to gain
+ let sc=0; sc+= {5:5,20:15,50:22,130:26,250:28}[vol]; sc+= {8:4,15:10,30:16,50:20}[mins]; sc+= A.speed[1]*5; sc+= A.rates[1]*4; sc+= A.leak[1]*5; sc=Math.min(100,sc);
+ const fit = fwd && vol>=20 ? "strong" : (fwd && vol>=5 ? "early" : "no");
+ const finds=[];
+ if(A.speed[1]>=2) finds.push("Customers wait "+(A.speed[1]===2?"until later in the day":A.speed[1]===3?"until the next day":"more than a day")+" for a price. Many book with whoever replies first, so slower quotes lose jobs you never hear about.");
+ if(A.leak[1]>=2) finds.push("Surcharges and expired rates are caught "+(A.leak[1]===2?"by memory":A.leak[1]===3?"when the invoice lands":"not at all")+". That is where quotes go out below cost or with a charge left off.");
+ if(A.rates[1]>=3) finds.push("Rates sit in emails, PDFs or people's heads, so every quote starts with a hunt for the latest buy rate.");
+ if(mins>=30) finds.push("Each door-to-door quote takes "+A.mins[0].toLowerCase()+" to build. Pricing from the rate sheet by fixed rules takes that to minutes, with every line traced to its row.");
+ if(!finds.length) finds.push("Your desk is already tight. The gain is mostly in handling more requests with the same team.");
+ const col = sc>=60?"#D92D20":sc>=35?"#FF5B1F":"#079455";
+ const label= sc>=60?"Big opportunity":sc>=35?"Clear room to improve":"Running well";
+ const notes=`Quote Desk Check: ${A.type[0]}; ${A.region[0]}; ${A.vol[0]} requests/week; ${A.mins[0]} per quote; replies ${A.speed[0].toLowerCase()}; ${A.people[0]} quoting; rates: ${A.rates[0]}; surcharges: ${A.leak[0]}; priority: ${A.pain[0]}; score ${sc}/100; ~${hrs} h/month on quotes.`;
+ const cal=CAL+"?name="+encodeURIComponent(A.name)+"&email="+encodeURIComponent(A.email)+"&a1="+encodeURIComponent(A.company+". "+notes);
+ let h=`<div class="tag" style="color:${col}">${label}</div><div class="score"><div class="dial" style="background:${col}">${sc}</div><div><div class="q" style="margin:0">${A.company}: your Quote Desk score</div><div class="hint" style="margin:4px 0 0">The higher the score, the more time and margin your desk can win back.</div></div></div>
+ <div class="grid"><div class="stat"><b>~${hrs} h</b><span>a month spent building quotes (${A.vol[0].toLowerCase()} a week × ${A.mins[0].toLowerCase()})</span></div><div class="stat"><b>${A.speed[0]}</b><span>until a customer hears your price today</span></div></div>
+ <div class="q" style="font-size:19px">What we see</div><ul class="find">${finds.map(f=>`<li>${f}</li>`).join('')}</ul>`;
+ if(fit==="strong"){
+  h+=`<div class="cta"><h3>Your desk is a strong fit.</h3><p class="hint">Book a 20-minute call with Rehan, the founder. Bring one recent quote request and the rate sheet you used, and you'll see it priced from your own rates. Bring a month of closed jobs too, and we'll show you what your quotes leaked. Your answers above come with the booking, so we start prepared.</p><a class="btn" href="${cal}" target="_blank" rel="noopener">Book my 20-minute call →</a><p class="small">Plans start at A$1,500 a month for up to 150 quote requests, unlimited users, month to month. <a href="/pricing.html">See pricing</a>.</p></div>`;
+ } else if(fit==="early"){
+  h+=`<div class="cta"><h3>Start with a Margin Leak Check.</h3><p class="hint">At your volume, the quickest win is the money your quotes already leak. Email a month of closed jobs (an Excel or CSV export, one row per charge line) to <b>try@quotes.getlaneworks.com</b> with the subject "Leak Check". You get back the charges you paid but never billed, and any charge sold below cost, each traced to its row.</p><a class="btn" href="${cal}" target="_blank" rel="noopener">Or book a 20-minute call →</a></div>`;
+ } else {
+  h+=`<div class="cta"><h3>Laneworks is built for forwarders and customs brokers.</h3><p class="hint">If you ship goods yourself, these free tools will help: the <a href="/freight-calculator.html">freight calculator</a>, the <a href="/tools/demurrage-detention-calculator.html">demurrage and detention calculator</a>, and <a href="/surcharge-watch.html">Surcharge Watch</a> for carrier charge changes.</p></div>`;
+ }
+ document.getElementById('intro').hidden=true;
+ const r=document.getElementById('result'); r.hidden=false;
+ document.getElementById('resultCard').innerHTML=h; window.scrollTo(0,0);
+}
+render();
+</script>
+</body>
+</html>
