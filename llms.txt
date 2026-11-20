@@ -39,6 +39,7 @@ Key facts:
 - [Nexcade alternative](https://getlaneworks.com/solutions/nexcade-alternative.html)
 - [Raft alternative](https://getlaneworks.com/solutions/raft-alternative.html)
 - [cargo.one alternative](https://getlaneworks.com/solutions/cargo-one-alternative.html): quotes priced only from your own rate sheet, compared with cargo.one's rate-and-booking platform
+- [Freightos AI alternative](https://getlaneworks.com/solutions/freightos-ai-alternative.html): quote emails priced from your own rate sheet and answered from your own mailbox, compared with the AI agents in Freightos for Forwarders
 - [Cargo-Stack alternative](https://getlaneworks.com/solutions/cargo-stack-alternative.html): quotes priced from your own rate sheet and answered from your own mailbox, compared with Cargo-Stack's forwarding workspace
 - [AI agents for freight forwarders](https://getlaneworks.com/solutions/ai-quoting-agent-freight-forwarders.html): what each back-office agent does, and what Laneworks covers today
 - [Freight forwarder workflow automation, step by step](https://getlaneworks.com/solutions/freight-forwarder-workflow-automation.html)
