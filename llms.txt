@@ -59,4 +59,4 @@ Key facts:
 - Sales: rehan@getlaneworks.com
 - [How to automate freight quoting yourself](https://getlaneworks.com/guides/automate-freight-quoting-yourself.html): 8-step guide with a free Excel quote calculator.
 
-- [Quote Desk Check](https://getlaneworks.com/check.html): nine questions for forwarders and customs brokers; shows hours spent quoting and where margin leaks, then books a 20-minute call.
+- [Quote Desk Score](https://getlaneworks.com/check.html): a 60-second check for forwarders and customs brokers; shows hours spent building quotes, where margin leaks with a free fix for each, then books a 20-minute call.
