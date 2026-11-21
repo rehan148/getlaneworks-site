@@ -49,6 +49,7 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding:28px 0 48px;font
 </style><!-- icons:start --><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#0B1A2E"><!-- icons:end --><!-- ga:start --><script async src="https://www.googletagmanager.com/gtag/js?id=G-QJXR1QVTGP"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QJXR1QVTGP',{client_storage:'none',anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});</script><!-- ga:end --></head>
 <body><div class="wrap"><div class="top"><a class="logo" href="/"><i></i>Laneworks</a><a class="back" href="/tools/">Free tools</a></div>
 <h1>Freight quote automation ROI calculator</h1>
+<p style="font-size:14px;color:#8A94A3;margin:0 0 10px">Updated 21 November 2026</p>
 <p>What is quoting costing your team, and what would automating the routine replies give back? Enter your own numbers. Every assumption is shown and can be changed, and the defaults are deliberately conservative.</p>
 <div class="card">
 <h2 style="margin-top:0">Your quote desk today</h2>
@@ -59,6 +60,14 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding:28px 0 48px;font
 <div class="grid2"><div><label class="lbl" for="w">Current win rate (%)</label><input id="w" type="number" min="0" step="any" inputmode="decimal" value="20"></div><div><label class="lbl" for="g">Average gross profit per job won</label><input id="g" type="number" min="0" step="any" inputmode="decimal" value="400"></div><div><label class="lbl" for="u">Win-rate gain from faster replies (points)</label><input id="u" type="number" min="0" step="any" inputmode="decimal" value="0"><span class=note style=margin-top:4px;display:block>Your estimate; left at 0</span></div></div>
 <div class="out" id="out"></div>
 <p class="note">Amounts are in the currency you enter for staff cost and gross profit; plan prices are in AUD ex GST. Requests that Laneworks flags go to your team as they do today and are counted as no saving.</p></div>
+<h2 id="freight-forwarding-automation-roi">Freight forwarding automation ROI: a worked example</h2>
+<p>Freight forwarding automation ROI comes down to two numbers: hours your team stops spending on routine quotes, and jobs you win by replying sooner. Here is the calculator's own maths on one example desk.</p>
+<ul><li><b>The desk:</b> 400 quote requests a month at 15 minutes each by hand is 100 hours of quoting.</li>
+<li><b>Time back:</b> if 64% (256 requests) come back ready to send and each takes 2 minutes to check, the team saves 13 minutes on each: about 55.5 hours a month.</li>
+<li><b>Staff time value:</b> 55.5 hours at A$45 an hour is A$2,496 a month, against A$3,500 for the Growth plan (up to 500 requests): 0.7× on time alone.</li>
+<li><b>Jobs won:</b> at a 20% win rate and A$400 gross profit per job, one extra job in every 100 requests adds 4 jobs and A$1,600 a month. Total value A$4,096: 1.2× the plan.</li></ul>
+<p style="margin-top:14px">In this example, time saved covers about 70% of the plan. The rest of the return comes from replying while the job is still there to win. Put in your own figures above, and read <a href="/freight-forwarding-automation.html">freight forwarding automation: what to automate first</a> for where quoting sits among the other back-office jobs.</p>
+<p style="font-size:14px;color:#8A94A3">Illustrative example, computed with this calculator's formula. Plan price in AUD ex GST; the win-rate gain is an assumption, not a measured result.</p>
 <h2>How to read it</h2>
 <p><b>Hours given back</b> is time your team no longer spends building routine quotes. Most teams spend it on the requests that need judgement, on following up quotes that went quiet, and on answering faster during peaks.</p>
 <p><b>Value per month</b> is that time at your staff cost, plus gross profit from any extra jobs if you enter a win-rate gain. <b>Return on plan</b> divides it by the monthly price.</p>
