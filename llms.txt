@@ -58,6 +58,7 @@ Key facts:
 - Free trial: try@quotes.getlaneworks.com (forward any quote request; priced reply in about 2 minutes, no sign-up)
 - Sales: rehan@getlaneworks.com
 - [How to get instant freight quotes](https://getlaneworks.com/blog/how-to-get-instant-freight-quotes.html): what to send in a request, what online instant quotes usually leave out, and how a forwarder replies fast from its own rate sheet
+- [RPA vs AI in freight forwarding](https://getlaneworks.com/blog/rpa-vs-ai-freight-forwarding.html): what RPA bots and AI reading each do well, how each fails, and how to combine them in a forwarding back office
 - [How to automate freight quoting yourself](https://getlaneworks.com/guides/automate-freight-quoting-yourself.html): 8-step guide with a free Excel quote calculator.
 
 - [Quote Desk Score](https://getlaneworks.com/check.html): a 60-second check for forwarders and customs brokers; shows hours spent building quotes, where margin leaks with a free fix for each, then books a 20-minute call.
