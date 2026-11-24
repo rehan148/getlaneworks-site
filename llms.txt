@@ -30,6 +30,7 @@ Key facts:
 - [Removalist quote calculator](https://getlaneworks.com/tools/removalist-quote-calculator.html): free online and Excel calculator for pricing local moves (crew, minimum hours, stairs, surcharges, GST)
 - [Quote Kit](https://getlaneworks.com/quote-kit.html): a done-for-you quote calculator built from a business's own price list, from A$1,500 one-off
 - [Freight calculator](https://getlaneworks.com/freight-calculator.html)
+- [Local Charges Index](https://getlaneworks.com/surcharge-watch.html): terminal-side charges on one import container at Sydney, Melbourne, Brisbane, Fremantle, London Gateway and Southampton, now and from 1 January 2027, each line linked to its source notice (updated 24 November 2026)
 
 ## Comparisons
 - [Best AI tools for freight forwarders (2026)](https://getlaneworks.com/best-ai-tools-for-freight-forwarders.html)
