@@ -58,6 +58,7 @@ Key facts:
 - See it on your own work: try@quotes.getlaneworks.com (forward one real quote request; the priced reply comes back within minutes, no sign-up)
 - Sales: rehan@getlaneworks.com
 - [How to get instant freight quotes](https://getlaneworks.com/blog/how-to-get-instant-freight-quotes.html): what to send in a request, what online instant quotes usually leave out, and how a forwarder replies fast from its own rate sheet
+- [Email automation for logistics companies](https://getlaneworks.com/blog/email-automation-for-logistics-companies.html): which logistics emails to automate, inbox rules vs AI reading, a worked quote example and what stays with a person
 - [RPA vs AI in freight forwarding](https://getlaneworks.com/blog/rpa-vs-ai-freight-forwarding.html): what RPA bots and AI reading each do well, how each fails, and how to combine them in a forwarding back office
 - [How to automate freight quoting yourself](https://getlaneworks.com/guides/automate-freight-quoting-yourself.html): 8-step guide with a free Excel quote calculator.
 
