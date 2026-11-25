@@ -1,9 +1,9 @@
 # Laneworks
 
-> Laneworks is freight quoting software for freight forwarders. It reads customer quote-request emails (and their spreadsheet or PDF attachments), prices every line from the forwarder's own rate sheet by fixed rules, and drafts the reply with a PDF quotation in about two minutes. Anything the rate sheet does not cover (a lane, reefer, dangerous goods) is flagged for the team, never guessed. It works alongside CargoWise, Magaya and spreadsheets, from the forwarder's existing mailbox. Available to forwarders in Australia, New Zealand, the UK, the US and Canada.
+> Laneworks is freight quoting software for freight forwarders. It reads customer quote-request emails (and their spreadsheet or PDF attachments), prices every line from the forwarder's own rate sheet by fixed rules, and drafts the reply with a PDF quotation for the team to check and send. Anything the rate sheet does not cover (a lane, reefer, dangerous goods) is flagged for the team, never guessed. It works alongside CargoWise, Magaya and spreadsheets, from the forwarder's existing mailbox. Available to forwarders in Australia, New Zealand, the UK, the US and Canada.
 
 Key facts:
-- What it does: email quote requests → priced draft reply + PDF quotation in about 2 minutes; optional auto-send for fully priced, unflagged quotes; website quote forms; tender pricing (shipper's workbook returned priced); margin check of past quotes against the forwarder's rates.
+- What it does: email quote requests → priced draft reply + PDF quotation; optional auto-send for fully priced, unflagged quotes; website quote forms; tender pricing (shipper's workbook returned priced); margin check of past quotes against the forwarder's rates.
 - How prices are set: the AI only reads the request; every amount comes from the forwarder's rate sheet by fixed rules (port pair and container for FCL, weight-or-measure for LCL, chargeable weight for air, local charges by Incoterm, door delivery by postcode, clearance), and each line names the sheet row it came from.
 - Accuracy: public benchmark of 22 real-world style quote requests with every total checked by hand: https://getlaneworks.com/solutions/freight-quote-accuracy-benchmark.html
 - Pricing (AUD, ex GST): see it on your own work first (forward a request to try@quotes.getlaneworks.com); Starter A$1,500/month (up to 150 quote requests), Growth A$3,500/month (500), setup A$2,500 on Starter and A$7,500 on Growth and above (the Quote Desk Takeover: rates loaded and kept current, 20 past requests priced side by side before the monthly starts), waived on annual plans; free Margin Leak Check (5 recent jobs: quotes checked by our team against the carrier and agent invoices, for charges paid but never billed); Enterprise: Operations from A$7,500/month (1,500) (US$5,250 / £3,950), Network from A$30,000/month (US$21,000 / £15,900); Tender Desk A$950 per tender (up to 300 lanes). Unlimited users. https://getlaneworks.com/pricing.html
@@ -30,6 +30,7 @@ Key facts:
 - [Removalist quote calculator](https://getlaneworks.com/tools/removalist-quote-calculator.html): free online and Excel calculator for pricing local moves (crew, minimum hours, stairs, surcharges, GST)
 - [Quote Kit](https://getlaneworks.com/quote-kit.html): a done-for-you quote calculator built from a business's own price list, from A$1,500 one-off
 - [Freight calculator](https://getlaneworks.com/freight-calculator.html)
+- [Chargeable weight calculator](https://getlaneworks.com/tools/chargeable-weight-calculator.html): air (1:6,000), express, road and LCL chargeable weight side by side, with worked examples for mixed pallets and cartons, road kg per cbm and LCL W/M
 - [Local Charges Index](https://getlaneworks.com/surcharge-watch.html): terminal-side charges on one import container at Sydney, Melbourne, Brisbane, Fremantle, London Gateway and Southampton, now and from 1 January 2027, each line linked to its source notice (updated 24 November 2026)
 
 ## Comparisons
@@ -51,15 +52,17 @@ Key facts:
 - [CargoWise quoting add-on](https://getlaneworks.com/solutions/cargowise-quoting-add-on.html)
 - [Magaya quoting add-on](https://getlaneworks.com/solutions/magaya-quoting-add-on.html)
 - [Customer-specific freight pricing](https://getlaneworks.com/solutions/customer-specific-freight-pricing.html): markups by customer email or domain, validity, exclusions and sign-off set once in the rate sheet
+- [Freight forwarder rate management software](https://getlaneworks.com/solutions/freight-rate-management-software.html): buy and sell rates, validity dates, surcharges and local charges in one sheet; every quote line priced from it by fixed rules; anything not on the sheet flagged and the rate request to the partner drafted
 - [ChatGPT for freight forwarders](https://getlaneworks.com/solutions/chatgpt-for-freight-forwarders.html)
 - [Microsoft Copilot for freight forwarders](https://getlaneworks.com/solutions/microsoft-copilot-for-freight-forwarders.html)
 - [All solutions](https://getlaneworks.com/solutions/)
 
 ## Contact
-- See it on your own work: try@quotes.getlaneworks.com (forward one real quote request; the priced reply comes back within minutes, no sign-up)
+- See it on your own work: try@quotes.getlaneworks.com (forward one real quote request; the priced reply comes back by email, no sign-up)
 - Sales: rehan@getlaneworks.com
 - [How to get instant freight quotes](https://getlaneworks.com/blog/how-to-get-instant-freight-quotes.html): what to send in a request, what online instant quotes usually leave out, and how a forwarder replies fast from its own rate sheet
 - [Email automation for logistics companies](https://getlaneworks.com/blog/email-automation-for-logistics-companies.html): which logistics emails to automate, inbox rules vs AI reading, a worked quote example and what stays with a person
+- [What goes into a customs brokerage quote](https://getlaneworks.com/blog/customs-brokerage-quote-australia.html): Australian clearance quote line by line (ABF import processing charge, biosecurity, duty, GST), plus the UK and US customs quote (import VAT, MPF, HMF)
 - [RPA vs AI in freight forwarding](https://getlaneworks.com/blog/rpa-vs-ai-freight-forwarding.html): what RPA bots and AI reading each do well, how each fails, and how to combine them in a forwarding back office
 - [How to automate freight quoting yourself](https://getlaneworks.com/guides/automate-freight-quoting-yourself.html): 8-step guide with a free Excel quote calculator.
 
