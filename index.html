@@ -264,8 +264,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     <div class="hero-grid">
       <div>
         <p class="eyebrow">The back office for freight forwarders</p>
-        <h1>Find the money your jobs already lost. <span class="hl">Then price every request from your own rates.</span></h1>
-        <p class="lede">Send one month of closed jobs. You get back every charge you paid out but never billed and every line sold below cost, each traced to the job. Then we run your quote desk: every request priced from your own rates, with the reply and PDF quote drafted in your name, so your customer hears from you before they ask anyone else. Your team checks and sends, or you switch fully priced quotes to automatic. Same team, more quotes out, no new hire.</p>
+        <h1>Find the money leaking out of your quotes. <span class="hl">Then price every new request from your own rates.</span></h1>
+        <p class="lede">Send 5 recent jobs, or a full month, with the sell and cost lines. You get back every charge you paid but never billed and every line sold below cost, each traced to the job. Then every new request is priced from your own rate sheet and drafted in your name, reply and PDF, for your team to check and send. Same team, more quotes out, no new hire.</p>
         <ul class="wins">
           <li><b>Money found:</b> unbilled charges and lines sold below cost, traced to the job</li>
           <li><b>Reply first</b> while competitors are still typing</li>
@@ -305,6 +305,46 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     <span><b>Unlimited users</b>, no per-quote fees</span>
   </div></div>
 </header>
+
+
+<section class="yn" id="your-numbers" aria-label="Your numbers">
+  <div class="wrap">
+    <h2>Your numbers, not ours.</h2>
+    <p class="sub">Put in your own figures. Nothing here is an average or a promise; it is your maths.</p>
+    <div class="calc-grid">
+      <label>Quote requests a month<input id="c-req" type="number" min="0" value="300"></label>
+      <label>Minutes to price one by hand<input id="c-min" type="number" min="0" value="20"></label>
+      <label>Jobs a month<input id="c-jobs" type="number" min="0" value="80"></label>
+      <label>Jobs in 20 that miss a charge (your guess)<input id="c-miss" type="number" min="0" max="20" value="1"></label>
+      <label>Typical missed charge (A$)<input id="c-amt" type="number" min="0" value="250"></label>
+    </div>
+    <div class="calc-out">
+      <div><span class="big" id="o-hrs">0</span><p>hours a month your team spends pricing quotes</p></div>
+      <div><span class="big" id="o-leak">A$0</span><p>a month leaking, on your own guess</p></div>
+      <div><span class="big" id="o-year">A$0</span><p>a year at that rate</p></div>
+    </div>
+    <p class="fine">The Margin Leak Check replaces the guess with the real figure from your jobs. <a class="link" href="/leak-check.html">Get your free Margin Leak Check</a></p>
+  </div>
+</section>
+<style>
+.yn{padding:72px 0;border-top:1px solid var(--line);background:#fff;color:var(--ink)}
+.yn h2{color:var(--ink)}.yn .sub,.yn .fine{color:var(--ink-2)}
+.calc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:28px 0}
+.calc-grid label{display:flex;flex-direction:column;justify-content:space-between;gap:8px;min-width:0;font-size:14px;color:var(--ink-2)}
+.calc-grid input{width:100%;box-sizing:border-box;background:#fff;font:inherit;font-size:18px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;color:var(--ink)}
+.calc-out{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.calc-out>div{border:1px solid var(--line);border-radius:16px;padding:24px;background:#fff}
+.calc-out p{color:var(--ink-2);margin:6px 0 0}
+.yn .fine{margin-top:16px}
+.calc-out .big{font-size:32px;font-weight:600;color:var(--ink)}
+@media(max-width:820px){.calc-grid{grid-template-columns:1fr 1fr}.calc-out{grid-template-columns:1fr}}
+</style>
+<script>
+(function(){const v=id=>Math.max(0,+document.getElementById(id).value||0);const f=n=>'A$'+Math.round(n).toLocaleString('en-AU');
+function run(){const hrs=v('c-req')*v('c-min')/60;const leak=v('c-jobs')*Math.min(v('c-miss'),20)/20*v('c-amt');
+document.getElementById('o-hrs').textContent=Math.round(hrs).toLocaleString('en-AU');document.getElementById('o-leak').textContent=f(leak);document.getElementById('o-year').textContent=f(leak*12);}
+document.querySelectorAll('.yn input').forEach(i=>i.addEventListener('input',run));run();})();
+</script>
 
 <section class="proof" aria-label="What Laneworks does, checked">
   <div class="wrap">
