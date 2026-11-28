@@ -85,7 +85,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:20px}
 </main>
 <footer>© 2026 Laneworks · <a href="/privacy.html">Privacy</a> · <a href="/security.html">Data &amp; security</a></footer>
 <script>
-const CAL="https://calendly.com/rehan-getlaneworks/live-quote-run";
+const CAL="https://outlook.office.com/bookwithme/user/e3761f7b6fe841b28d9f4b0a87936c0b@getlaneworks.com/meetingtype/Gyhr7jMq0ky-EFUdtWEvug2?anonymous";
 const LEAD="https://desk.getlaneworks.com/lead";
 // Order: one easy qualifier, then the two numbers that produce an instant reward (hours), then the pain questions,
 // then team size (second reward), then the two qualifiers that are easier to answer once invested, then contact.
@@ -173,7 +173,7 @@ function result(){
  if(mins>=15) F2.push(["Each quote is built from scratch",`${A.mins[0]} a quote, ${A.vol[0].toLowerCase()} times a week.`,"Make one template per regular lane with the fixed charges already in it, so only the freight line changes."]);
  if(!F2.length) F2.push(["Your desk is tight","Fast replies, tracked surcharges, rates in one place.","The next gain is handling more requests with the same team."]);
  const notes=`Quote Desk Score ${sc}/100 (${grade[0]}); ${A.type[0]}; role: ${A.role[0]}; tz: ${TZ}; ${A.vol[0]} requests/week; ${A.mins[0]} per quote; replies ${A.speed[0].toLowerCase()}; surcharges: ${A.leak[0]}; rates: ${A.rates[0]}; ${A.people[0]} quoting; wants it: ${A.when[0]}; phone: ${A.phone||"-"}; ~${hrs} h/month on quotes.`;
- const cal=CAL+"?name="+encodeURIComponent(A.name)+"&email="+encodeURIComponent(A.email)+"&a1="+encodeURIComponent(A.company+". "+notes);
+ const cal=CAL;
  const plain=t=>t.replace(/<a href="\/surcharge-watch.html">Surcharge Watch<\/a>/g,"Surcharge Watch (getlaneworks.com/surcharge-watch.html)").replace(/<[^>]+>/g,"");
  const R={score:sc,fit,hours:hrs,label:grade[0]}; F2.slice(0,4).forEach((x,n)=>{R["f"+(n+1)+"t"]=plain(x[0]);R["f"+(n+1)+"x"]=plain(x[2])});
  send("result",{contact:{name:A.name,company:A.company,email:A.email},result:R});
